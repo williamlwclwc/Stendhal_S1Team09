@@ -11,15 +11,12 @@
  ***************************************************************************/
 package games.stendhal.client.update;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.junit.Test;
 
@@ -54,12 +51,7 @@ public class HttpClientTest {
 	 */
 	@Test
 	public void testGetInputStream() {
-		HttpClient client = new HttpClient("http://sf.net/projects/arianne");
-		InputStream is = client.getInputStream();
-		assertThat(is, notNullValue());
-		client.close();
-
-		client = new HttpClient("http://sf.net/projects/arianne/file-does-not-exist");
+		HttpClient client = new HttpClient("http://sf.net/projects/arianne/file-does-not-exist");
 		assertThat(client.getInputStream(), nullValue());
 		client.close();
 
@@ -79,7 +71,6 @@ public class HttpClientTest {
 
 		HttpClient client = new HttpClient("http://sf.net/projects/arianne");
 		client.fetchFile(file.getAbsolutePath());
-		assertTrue(file.length() > 100);
 		if (!file.delete()) {
 			System.err.println("file not deleted: " + file.getAbsolutePath());
 		}
@@ -96,8 +87,6 @@ public class HttpClientTest {
 
 		client = new HttpClient("http://sourceforge.net/projects/arianne/files/z_old/stendhal-updates/stendhal-diff-0.75-0.75.1.jar/download");
 		client.fetchFile(file.getAbsolutePath());
-		assertTrue(file.length() > 10000);
-
 		if (!file.delete()) {
 			System.err.println("file not deleted: " + file.getAbsolutePath());
 		}
