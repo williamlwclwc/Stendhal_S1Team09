@@ -129,8 +129,8 @@ public class WeeklyItemQuestTest {
 		en.step(player, "bye");
 		assertEquals("Good bye, it was pleasant talking with you.", getReply(npc));
 
-		// Verify that the same item is not assigned twice by asking for another item to fetch 15 times.
-		for (int count = 0; count <= 15; count++) {
+		// Verify that the same item is not assigned twice by asking for another item to fetch 200 times.
+		for (int count = 0; count <= 200; count++) {
 			player.setQuest(questSlot, "dark dagger;0");
 			en.step(player, "hi");
 			assertEquals("Welcome to Kirdneh Museum.", getReply(npc));

@@ -79,13 +79,26 @@ public class StartRecordingRandomItemCollectionAction implements ChatAction {
     items, final String message) {
 		this.questname = checkNotNull(questname);
 		this.index = index;
-		this.items = ImmutableMap.copyOf(items);
+		this.items = new HashMap<String, Integer>(items);
 		this.message = checkNotNull(message);
 	}
 
 	@Override
 	public void fire(final Player player, final Sentence sentence, final EventRaiser raiser) {
-		final String itemname = Rand.rand(items.keySet());
+		// On the weekly item quest we don't want to ask the player to fetch the same item twice in a row,
+		// so we find out the previous item and remove it from the item map.
+		String newItemName = Rand.rand(items.keySet());
+		if (questname == "weekly_item" && player.getQuest(questname) != null) {
+			String[] questState = player.getQuest(questname).split(";");
+			String[] previousItem = questState[0].split("=");
+			String previousItemName = previousItem[0];
+			
+			while (newItemName.equalsIgnoreCase(previousItemName)) {
+				newItemName = Rand.rand(items.keySet());
+			}
+		}
+
+		final String itemname = newItemName;
 		final int quantity = items.get(itemname);
 
 		Map<String, String> substitutes = new HashMap<String, String>();
