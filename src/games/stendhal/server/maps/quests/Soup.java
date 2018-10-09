@@ -293,7 +293,8 @@ public class Soup extends AbstractQuest {
 								if (!missing.isEmpty()) {
 									npc.say("Thank you very much! What else did you bring?");
 								} else {
-									player.addKarma(5.0);
+									//give no karma if player says everything separately.
+									//player.addKarma(5.0);
 									player.addXP(20);
 									/*
 									 * place soup after XP added otherwise
@@ -383,9 +384,9 @@ public class Soup extends AbstractQuest {
 			player.addKarma(-5.0);
 			return;
 		} else {
-			// you get less XP if you did it the lazy way
-			// and no karma
-			player.addXP(20);
+			//give karma and 50 xp!!! Best way!
+			player.addKarma(5.0);
+			player.addXP(50);
 			placeSoupFor(player);
 			player.getStatusList().removeAll(PoisonStatus.class);
 			npc.say("The soup's on the table for you, it will heal you. Tell me if I can help you with anything else.");
