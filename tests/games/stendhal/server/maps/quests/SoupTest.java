@@ -33,13 +33,8 @@ import utilities.RPClass.ItemTestHelper;
 public class SoupTest {
 
 	private Player player = null;
-	
-	private Player player1 = null;
-	
 	private SpeakerNPC npc = null;
 	private Engine en = null;
-	
-	private double karma1 = 0;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -58,9 +53,6 @@ public class SoupTest {
 		quest.addToWorld();
 
 		player = PlayerTestHelper.createPlayer("bob");
-		player1 = PlayerTestHelper.createPlayer("snow1");
-		karma1 = player1.getKarma();
-	
 	}
 
 	@Test
@@ -130,62 +122,4 @@ public class SoupTest {
 		en.step(player, "bye");
 		assertEquals("Goodbye, all you customers do work me hard ...", getReply(npc));
 	}
-	
-	
-	
-	@Test
-	public void test() {
-		npc = SingletonRepository.getNPCList().get("Old Mother Helena");
-		en = npc.getEngine();
-		player1.setXP(100);		
-		
-	
-		PlayerTestHelper.equipWithItem(player1, "carrot");
-		PlayerTestHelper.equipWithItem(player1, "spinach");
-		PlayerTestHelper.equipWithItem(player1, "courgette");
-		PlayerTestHelper.equipWithItem(player1, "collard");
-		PlayerTestHelper.equipWithItem(player1, "cauliflower");
-		PlayerTestHelper.equipWithItem(player1, "broccoli");
-		PlayerTestHelper.equipWithItem(player1, "leek");
-		PlayerTestHelper.equipWithItem(player1, "salad");
-		PlayerTestHelper.equipWithItem(player1, "onion");
-		
-		en.step(player1, "hi");
-		assertEquals("Hello, stranger. You look weary from your travels. I know what would #revive you.", getReply(npc));
-		en.step(player1, "revive");
-		assertEquals("My special soup has a magic touch. I need you to bring me the #ingredients.", getReply(npc));
-		en.step(player1, "ingredients");
-		assertEquals("I need 9 ingredients before I make the soup: #carrot, #spinach, #courgette, #collard, #salad, #onion, #cauliflower, #broccoli, and #leek. Will you collect them?", getReply(npc));
-		
-		en.step(player1, "yes");
-		assertEquals("You made a wise choice. Do you have anything I need already?", getReply(npc));
-		en.step(player1, "yes");
- 		assertEquals("What did you bring?", getReply(npc));
-		en.step(player1, "carrot");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "spinach");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "courgette");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "collard");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "cauliflower");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "onion");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "broccoli");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "leek");
-		assertEquals("Thank you very much! What else did you bring?", getReply(npc));
-		en.step(player1, "salad");
-		assertEquals("The soup's on the table for you. It will heal you. My magical method in making the soup has given you a little karma too.", getReply(npc));
-		
-		assertEquals(120, player1.getXP());
-		
-		assertEquals(karma1, player1.getKarma(), 1);
-				
-		
-	}
-
-	
 }
