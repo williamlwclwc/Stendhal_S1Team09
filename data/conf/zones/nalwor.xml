@@ -115,7 +115,13 @@
       <destination zone="0_nalwor_forest_w" ref="inside_exit" />
     </portal>
 
+	<!--  
     <portal x="87" y="92" ref="outside_exit">
+      <implementation
+        class-name="games.stendhal.server.entity.mapstuff.portal.OneWayPortalDestination" />
+    </portal>
+    -->
+    <portal x="84" y="93" ref="outside_exit">
       <implementation
         class-name="games.stendhal.server.entity.mapstuff.portal.OneWayPortalDestination" />
     </portal>
@@ -124,7 +130,13 @@
       <destination zone="0_nalwor_forest_w" ref="outside_exit" />
     </portal>
 
+    <!--
     <portal x="117" y="91" ref="inside_exit">
+      <implementation
+        class-name="games.stendhal.server.entity.mapstuff.portal.OneWayPortalDestination" />
+    </portal>
+    -->
+    <portal x="114" y="92" ref="inside_exit">
       <implementation
         class-name="games.stendhal.server.entity.mapstuff.portal.OneWayPortalDestination" />
     </portal>
