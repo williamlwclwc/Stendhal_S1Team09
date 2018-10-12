@@ -17,9 +17,14 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import java.net.URI;
+
+import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import games.stendhal.server.core.config.ZoneGroupsXMLLoader;
+import games.stendhal.server.core.engine.StendhalRPWorld;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendlRPWorld;
@@ -182,6 +187,46 @@ public class PortalTest {
 		assertTrue("all things are nice", port.usePortal(player));
 	}
 
+	/**
+	 * Tests for nalwor_teleporting_inside_exit.
+	 */
+	@Test
+	public final void PortalTest_nalwor_inside_exit() {
+		final Logger logger = Logger.getLogger(StendhalRPWorld.class);
+		try {
+			final ZoneGroupsXMLLoader loader = new ZoneGroupsXMLLoader(new URI(
+					"/data/conf/zones.xml"));
+			loader.load();
+		} catch (final Exception e) {
+			logger.error("Error on Init the server.", e);
+		}
+		final Portal port = new Portal();
+		final Player player = PlayerTestHelper.createPlayer("player");
+		port.setDestination("0_nalwor_forest_w", "inside_exit");
+		port.usePortal(player);
+		assertTrue("inside_exit teleporting works fine", (player.getX() == 114
+				   && player.getY() == 92));  
+	}
+	/**
+	 * Tests for nalwor_teleporting_outside_exit.
+	 */
+	@Test
+	public final void PortalTest_nalwor_outside_exit() {
+		final Logger logger = Logger.getLogger(StendhalRPWorld.class);
+		try {
+			final ZoneGroupsXMLLoader loader = new ZoneGroupsXMLLoader(new URI(
+					"/data/conf/zones.xml"));
+			loader.load();
+		} catch (final Exception e) {
+			logger.error("Error on Init the server.", e);
+		}
+		final Portal port = new Portal();
+		final Player player = PlayerTestHelper.createPlayer("player");
+		port.setDestination("0_nalwor_forest_w", "outside_exit");
+		port.usePortal(player);
+		assertTrue("outside_exit teleporting works fine", (player.getX() == 84
+				   && player.getY() == 93));  
+	}
 	/**
 	 * Tests for onUsed.
 	 */
