@@ -49,7 +49,6 @@ public class SoupTest1 {
 		quest.addToWorld();
 
 		player = PlayerTestHelper.createPlayer("snow");
-		karma1 = player.getKarma();
 	}
 	
 
@@ -88,8 +87,8 @@ public class SoupTest1 {
 		
 		assertEquals("The soup's on the table for you, it will heal you. Tell me if I can help you with anything else.", getReply(npc));
 		assertEquals(150, player.getXP());
-		karma1 = karma1 + 5.0;
-		assertEquals(karma1, player.getKarma(), 1);
+		//because player starts at karma 10.0
+		assertEquals(15, player.getKarma(), 2);
 				
 		
 	}

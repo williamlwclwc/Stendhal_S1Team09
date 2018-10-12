@@ -59,7 +59,6 @@ public class SoupTest {
 
 		player = PlayerTestHelper.createPlayer("bob");
 		player1 = PlayerTestHelper.createPlayer("snow1");
-		karma1 = player1.getKarma();
 	
 	}
 
@@ -182,7 +181,7 @@ public class SoupTest {
 		
 		assertEquals(120, player1.getXP());
 		
-		assertEquals(karma1, player1.getKarma(), 1);
+		assertEquals(10, player1.getKarma(), 2);
 				
 		
 	}
