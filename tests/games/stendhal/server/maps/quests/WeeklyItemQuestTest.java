@@ -83,7 +83,7 @@ public class WeeklyItemQuestTest {
 		en.step(player, "bye");
 		assertEquals("Good bye, it was pleasant talking with you.", getReply(npc));
 
-		player.setQuest(questSlot, "obsidian;100");
+		player.setQuest(questSlot, ";100;;obsidian");
 		Item item = ItemTestHelper.createItem("obsidian");
 		player.getSlot("bag").add(item);
 		final int xp = player.getXP();
@@ -119,7 +119,7 @@ public class WeeklyItemQuestTest {
 
 		// -----------------------------------------------
 
-		player.setQuest(questSlot, "dark dagger;0");
+		player.setQuest(questSlot, ";0;;dark dagger");
 		en.step(player, "hi");
 		assertEquals("Welcome to Kirdneh Museum.", getReply(npc));
 		en.step(player, "task");
@@ -131,7 +131,7 @@ public class WeeklyItemQuestTest {
 
 		// Verify that the same item is not assigned twice by asking for another item to fetch 200 times.
 		for (int count = 0; count <= 200; count++) {
-			player.setQuest(questSlot, "dark dagger;0");
+			player.setQuest(questSlot, ";0;;dark dagger");
 			en.step(player, "hi");
 			assertEquals("Welcome to Kirdneh Museum.", getReply(npc));
 			en.step(player, "task");
@@ -144,5 +144,18 @@ public class WeeklyItemQuestTest {
 			assertFalse(player.getQuest(questSlot).contains("dark dagger"));
 		}
 
+		// Verify that the same item is not assigned after completing the quest by completing the quest with the same item 200 times.
+		for (int count = 0; count <= 200; count++) {
+			player.setQuest(questSlot, "done;0;;obsidian");
+
+			en.step(player, "hi");
+			assertEquals("Welcome to Kirdneh Museum.", getReply(npc));
+			en.step(player, "task");
+			assertTrue(getReply(npc).startsWith("I want Kirdneh's museum to be the greatest in the land! Please fetch "));
+			en.step(player, "bye");
+			assertEquals("Good bye, it was pleasant talking with you.", getReply(npc));
+
+			assertFalse(player.getQuest(questSlot).contains("obsidian"));
+		}
 	}
 }

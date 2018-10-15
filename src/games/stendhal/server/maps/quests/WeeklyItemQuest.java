@@ -198,8 +198,10 @@ public class WeeklyItemQuest extends AbstractQuest {
 		// common place to get the start quest actions as we can both starts it and abort and start again
 
 		final List<ChatAction> actions = new LinkedList<ChatAction>();
-		actions.add(new StartRecordingRandomItemCollectionAction(QUEST_SLOT,0,items,"I want Kirdneh's museum to be the greatest in the land! Please fetch [item]"
+		actions.add(new StartRecordingRandomItemCollectionAction(QUEST_SLOT,3,items,"I want Kirdneh's museum to be the greatest in the land! Please fetch [item]"
 				+ " and say #complete, once you've brought it."));
+		// We don't want this quest to register as completed if it has been completed previously so we clear than index of the quest state.
+		actions.add(new SetQuestAction(QUEST_SLOT, 0, ""));
 		actions.add(new SetQuestToTimeStampAction(QUEST_SLOT, 1));
 
 		return new MultipleActions(actions);
@@ -212,7 +214,7 @@ public class WeeklyItemQuest extends AbstractQuest {
 								 new NotCondition(new TimePassedCondition(QUEST_SLOT,1,expireDelay))),
 				ConversationStates.ATTENDING,
 				null,
-				new SayRequiredItemAction(QUEST_SLOT,0,"You're already on a quest to bring the museum [item]"
+				new SayRequiredItemAction(QUEST_SLOT,3,"You're already on a quest to bring the museum [item]"
 						+ ". Please say #complete if you have it with you."));
 
 		npc.add(ConversationStates.ATTENDING, ConversationPhrases.QUEST_MESSAGES,
@@ -220,7 +222,7 @@ public class WeeklyItemQuest extends AbstractQuest {
 								 new TimePassedCondition(QUEST_SLOT,1,expireDelay)),
 				ConversationStates.ATTENDING,
 				null,
-				new SayRequiredItemAction(QUEST_SLOT,0,"You're already on a quest to bring the museum [item]"
+				new SayRequiredItemAction(QUEST_SLOT,3,"You're already on a quest to bring the museum [item]"
 						+ ". Please say #complete if you have it with you. But, perhaps that is now too rare an item. I can give you #another task, or you can return with what I first asked you."));
 
 		npc.add(ConversationStates.ATTENDING, ConversationPhrases.QUEST_MESSAGES,
@@ -257,7 +259,7 @@ public class WeeklyItemQuest extends AbstractQuest {
 				null);
 
 		final List<ChatAction> actions = new LinkedList<ChatAction>();
-		actions.add(new DropRecordedItemAction(QUEST_SLOT,0));
+		actions.add(new DropRecordedItemAction(QUEST_SLOT,3));
 		actions.add(new SetQuestToTimeStampAction(QUEST_SLOT, 1));
 		actions.add(new IncrementQuestAction(QUEST_SLOT,2,1));
 		actions.add(new SetQuestAction(QUEST_SLOT, 0, "done"));
@@ -279,7 +281,7 @@ public class WeeklyItemQuest extends AbstractQuest {
 		npc.add(ConversationStates.ATTENDING,
 				ConversationPhrases.FINISH_MESSAGES,
 				new AndCondition(new QuestActiveCondition(QUEST_SLOT),
-								 new PlayerHasRecordedItemWithHimCondition(QUEST_SLOT,0)),
+								 new PlayerHasRecordedItemWithHimCondition(QUEST_SLOT,3)),
 				ConversationStates.ATTENDING,
 				null,
 				new MultipleActions(actions));
@@ -287,10 +289,10 @@ public class WeeklyItemQuest extends AbstractQuest {
 		npc.add(ConversationStates.ATTENDING,
 				ConversationPhrases.FINISH_MESSAGES,
 				new AndCondition(new QuestActiveCondition(QUEST_SLOT),
-								 new NotCondition(new PlayerHasRecordedItemWithHimCondition(QUEST_SLOT,0))),
+								 new NotCondition(new PlayerHasRecordedItemWithHimCondition(QUEST_SLOT,3))),
 				ConversationStates.ATTENDING,
 				null,
-				new SayRequiredItemAction(QUEST_SLOT,0,"You don't seem to have [item]"
+				new SayRequiredItemAction(QUEST_SLOT,3,"You don't seem to have [item]"
 						+ " with you. Please get it and say #complete only then."));
 
 	}
@@ -342,8 +344,8 @@ public class WeeklyItemQuest extends AbstractQuest {
 		}
 		res.add("I want to help Kirdneh museum become the greatest in the land.");
 		if (player.hasQuest(QUEST_SLOT) && !player.isQuestCompleted(QUEST_SLOT)) {
-			String questItem = player.getRequiredItemName(QUEST_SLOT,0);
-			int amount = player.getRequiredItemQuantity(QUEST_SLOT,0);
+			String questItem = player.getRequiredItemName(QUEST_SLOT,3);
+			int amount = player.getRequiredItemQuantity(QUEST_SLOT,3);
 			if (!player.isEquipped(questItem, amount)) {
 				res.add(String.format("I have been asked to find " +Grammar.quantityplnoun(amount, questItem, "a") + " for Kirdneh museum."));
 			} else {

@@ -90,11 +90,13 @@ public class StartRecordingRandomItemCollectionAction implements ChatAction {
 		String newItemName = Rand.rand(items.keySet());
 		if (questname == "weekly_item" && player.getQuest(questname) != null) {
 			String[] questState = player.getQuest(questname).split(";");
-			String[] previousItem = questState[0].split("=");
-			String previousItemName = previousItem[0];
-			
-			while (newItemName.equalsIgnoreCase(previousItemName)) {
-				newItemName = Rand.rand(items.keySet());
+			if (questState.length > 3) {
+				String[] previousItem = questState[3].split("=");
+				String previousItemName = previousItem[0];
+				
+				while (newItemName.equalsIgnoreCase(previousItemName)) {
+					newItemName = Rand.rand(items.keySet());
+				}
 			}
 		}
 
