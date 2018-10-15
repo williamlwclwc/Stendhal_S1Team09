@@ -92,6 +92,8 @@ public class LibrarianNPC implements ZoneConfigurator {
 						"Wikipedia is an Internet based project to create a #free encyclopedia.");
 				addReply("free",
 				        "The Wikipedia content may be used according to the rules specified in the Creative Commons Attribution-ShareAlike License which can be found at #https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License .");
+				addReply("gem book",
+						"Hm, gem book you say. Have a chat with #Ceryl, the librarian in Semos. They might be able to help you.");
 				addGoodbye();
 			}
 		};
