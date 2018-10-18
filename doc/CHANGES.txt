@@ -21,6 +21,14 @@ Changelog
 - portals can use "face" attribute to set player facing direction when used as a destination
 - portals can use "offset" attribute to offset player positioning in relation to destination
 
+*bugfixes*
+- librarian in Ados now knows about gem books #3
+- magic gnomes are now more magical than ever #5
+- soup quest is no longer dull #2
+- teleporting huts in Nalwor no longer "dump you on the ground" #1
+- museum item quest can no longer ask for the same item in a row #6
+- straw carts don't vanish when you step over them from another screen any more #4
+
 
 1.27
 *world*
