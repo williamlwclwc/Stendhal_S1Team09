@@ -54,7 +54,7 @@
     <corpse name="tiny_humanoid" harmless="gnome" />
     <drops>
       <item value="money" quantity="[2,5]" probability="70.0"/>
-      <!-- <item value="potion" quantity="[2,4]" probability="40.0"/> -->
+      <!-- Mage gnome needs to drop 2-4 potions with probability 40% -->
       <item value="potion" quantity="[2,4]" probability="40"/>
       <item value="antidote" quantity="[1,1]" probability="10.0"/>
       <item value="porcini" quantity="[1,10]" probability="10.0"/>
