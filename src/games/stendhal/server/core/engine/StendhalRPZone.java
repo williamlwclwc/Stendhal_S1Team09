@@ -55,6 +55,7 @@ import games.stendhal.server.entity.creature.Creature;
 import games.stendhal.server.entity.creature.DomesticAnimal;
 import games.stendhal.server.entity.creature.Sheep;
 import games.stendhal.server.entity.item.Item;
+import games.stendhal.server.entity.mapstuff.block.Block;
 import games.stendhal.server.entity.mapstuff.portal.OneWayPortalDestination;
 import games.stendhal.server.entity.mapstuff.portal.Portal;
 import games.stendhal.server.entity.mapstuff.spawner.CreatureRespawnPoint;
@@ -1118,10 +1119,23 @@ public class StendhalRPZone extends MarauroaRPZone {
 		for (final RPObject other : objects.values()) {
 			// Ignore same object
 			if (entity != other) {
+				
+				
 				final Entity otherEntity = (Entity) other;
 
 				// Check if the objects overlap
 				if (area.intersects(otherEntity.getX(), otherEntity.getY(), otherEntity.getWidth(), otherEntity.getHeight())) {
+					
+					// if the otherEntity is a block and
+					// if the zone of the player is not equal to the zone of the block 
+					if ((otherEntity.getZone() != entity.getZone()) && (otherEntity instanceof Block))
+					{
+						// then call the push method and push the block in the direction of the player
+						((Block) otherEntity).push(((Player) entity), ((Player) entity).getDirection());
+						// return null to avoid going to the next if statement
+						return null;
+					}
+				
 					// Check if it's blocking
 					if (otherEntity.isObstacle(entity)) {
 						return otherEntity;
