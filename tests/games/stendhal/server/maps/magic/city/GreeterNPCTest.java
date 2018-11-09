@@ -181,6 +181,43 @@ public class GreeterNPCTest extends ZonePlayerAndNPCTestImpl {
 		assertEquals("Congratulations! Here is your home scroll!", getReply(npc));
 		assertTrue(player.isEquipped("home scroll"));
 	}
+	
+	/**
+	 * Tests for buying wofol city scrolls.
+	 */
+	@Test
+	public void testWofolCityScrolls() {
+		final SpeakerNPC npc = getNPC("Erodel Bmud");
+		final Engine en = npc.getEngine();
+
+		assertTrue(en.step(player, "hi"));
+		assertEquals("Salutations, traveller.", getReply(npc));
+		
+		//not gonna buy the scroll
+		assertTrue(en.step(player, "buy wofol city scroll"));
+		assertEquals("A wofol city scroll will cost 600. Do you want to buy it?", getReply(npc));
+		
+		assertTrue(en.step(player, "no"));
+		assertEquals("Ok, how else may I help you?", getReply(npc));
+		
+		//want to buy the scroll but do not have enough money
+		assertTrue(en.step(player, "buy wofol city scroll"));
+		assertEquals("A wofol city scroll will cost 600. Do you want to buy it?", getReply(npc));
+		
+		assertTrue(en.step(player, "yes"));
+		assertEquals("Sorry, you don't have enough money!", getReply(npc));
+		
+		//buy the scroll with sufficient money
+		assertTrue(equipWithMoney(player, 600));
+		
+		assertTrue(en.step(player, "buy wofol city scroll"));
+		assertEquals("A wofol city scroll will cost 600. Do you want to buy it?", getReply(npc));
+
+		assertFalse(player.isEquipped("wofol city scroll"));
+		assertTrue(en.step(player, "yes"));
+		assertEquals("Congratulations! Here is your wofol city scroll!", getReply(npc));
+		assertTrue(player.isEquipped("wofol city scroll"));
+	}
 
 	/**
 	 * Tests for sellScroll.
