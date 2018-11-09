@@ -166,7 +166,28 @@
       <slot name="rhand"/>
     </equipable>
   </item>
-
+  
+  <item name="wofol city scroll">
+    <type class="scroll" subclass="marked" tileid="-1"/>
+    <description>You see a wofol city scroll, it will take you back to wofol city.</description>
+    <implementation class-name="games.stendhal.server.entity.item.scroll.MarkedScroll"/>
+    <attributes>
+      <infostring value="-1_semos_mine_nw 50 100"/>
+      <quantity value="1"/>
+      <menu value="Use|Use"/>
+    </attributes>
+    <weight value="0.01"/>
+    <value value="1"/>
+    <equipable>
+      <slot name="ground"/>
+      <slot name="content"/>
+      <slot name="bag"/>
+      <slot name="trade"/>
+      <slot name="lhand"/>
+      <slot name="rhand"/>
+    </equipable>
+  </item>
+  
   <item name="marked scroll">
     <type class="scroll" subclass="marked" tileid="-1"/>
     <description/>
