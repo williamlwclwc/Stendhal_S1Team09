@@ -73,6 +73,9 @@ public final class ShopList {
 		shops.add("kirdnehscrolls", "home scroll", 400);
 		shops.add("kirdnehscrolls", "empty scroll", 2000);
 
+		shops.add("wofolscrolls", "wofol city scroll", 400);
+		shops.add("wofolscrolls", "empty scroll", 2000);
+
 		shops.add("allscrolls", "home scroll", 250);
 		shops.add("allscrolls", "summon scroll", 200);
 		shops.add("allscrolls", "empty scroll", 2000);
@@ -80,6 +83,7 @@ public final class ShopList {
 		shops.add("allscrolls", "nalwor city scroll", 400);
 		shops.add("allscrolls", "fado city scroll", 600);
 		shops.add("allscrolls", "kirdneh city scroll", 600);
+		shops.add("allscrolls", "wofol city scroll", 400);
 
 		shops.add("sellstuff", "knife", 15);
 		shops.add("sellstuff", "club", 10);
