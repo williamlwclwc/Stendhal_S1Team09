@@ -2,8 +2,11 @@ package games.stendhal.server.entity.item;
 
 import java.util.Map;
 
+//import games.stendhal.common.constants.Testing;
 import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.player.Player;
+//import marauroa.common.game.RPObject;
+//import utilities.PlayerTestHelper;
 
 
 public class InvisibilityRing extends SlotActivatedItem{
@@ -22,7 +25,7 @@ public class InvisibilityRing extends SlotActivatedItem{
 
 	
 	/**
-	 * Create a RingOfLife.
+	 * Create an invisibility ring 
 	 */
 	public InvisibilityRing() {
 		super("invisibility ring", "ring", "engagement_ring", null);
@@ -44,19 +47,69 @@ public class InvisibilityRing extends SlotActivatedItem{
 	}//describe
 	
 
+	/**
+	 * Equip the ring 
+	 *
+	 * If on the finger then player becomes invisible 
+	 *
+	 * @return true or false 
+	 */
+	
+	//Variables to store information about player and slot
+	Player player;
+	String fingerSlot;
 	@Override
-	public boolean onEquipped(final RPEntity player, final String slot) {
-		
-		if (player instanceof Player)
+	public boolean onEquipped(final RPEntity owner, final String slot) {
+		//If it is a player 
+		if (owner instanceof Player)
 		{
-			if (slot.equals("finger") && (isActivated() == false))
+			//If the slot is the finger 
+			if (slot.equals("finger"))
 			{
-				((Player) player).setInvisible(true);
-			}
-		}
+				//Store the variable 
+				player = (Player)owner;
+				
+				//Store the slot 
+				fingerSlot = slot;
+				
+				//Set the player to be invisible 
+				((Player) owner).setInvisible(true);
+				return true;	
+			}//if 
+			else 
+				return false;
+		}//if
 
-		return super.onEquipped(player, slot);
-	}
+		else 
+			return false;
+	}//onEquipped
+	
+	
+	
+	/**
+	 * Un-equip the ring 
+	 *
+	 * If un-equip from the finger then player becomes visible 
+	 *
+	 * @return true or false 
+	 */
+	@Override
+	public boolean onUnequipped() {
+		
+		//If there is ring on the finger 
+		if (this.onEquipped(player, fingerSlot) == true)
+		{	
+			//Player should be visible to creatures 
+			player.setInvisible(false);
+			return true;
+		}//if 
+		else 
+		{
+			return false;
+		}
+		
+	}//onUnequipped
+
 	
 
 }

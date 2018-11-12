@@ -1,7 +1,7 @@
 package games.stendhal.server.entity.item;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
+
 import static org.junit.Assert.*;
 import marauroa.common.Log4J;
 
@@ -77,18 +77,40 @@ public class InvisibilityRingTest {
 		
 		//Set the player to be visible
 		//Test that the player is visible
-		assertThat(player.isInvisibleToCreatures(), not(is(true)));
-		
-		//Equip user with the invisibility ring 
-		player.equip("finger", ring);
-		
+		assertFalse(player.isInvisibleToCreatures());
+
 		//Execute the test 
 		//Player used the ring 
 		ring.onEquipped(player, "finger");
 		
 		//Check the result 
-		//Test that the user is visible to creature when he/she has the ring 
+		//Test that the user is invisible to creature when he/she has the ring 
 		assertTrue(player.isInvisibleToCreatures());
+	}//testOnUsedIsInvisible 
+	
+	
+	/**
+	 * Tests for ring is un-equipped from finger and the player should not be invisible so that the creature can attack 
+	 */
+	@Test
+	public void ringIsUnequippedCreatureShouldAttack() {
+		//Prepare the inputs
+		//Create player 
+		final Player player = PlayerTestHelper.createPlayer("player");
+		//Create ring 
+		final InvisibilityRing ring = new InvisibilityRing();
+		
+		//Equip player with ring on finger 
+		ring.onEquipped(player, "finger");
+		
+		//Test that the user is invisible to creature when he/she has the ring 
+		assertTrue(player.isInvisibleToCreatures());
+		
+		//Un-equipped the ring from finger 
+		ring.onUnequipped();
+		 
+		//Player should not be visible to creature 
+		assertFalse(player.isInvisibleToCreatures());
 	}//testOnUsedIsInvisible 
 	
 	
