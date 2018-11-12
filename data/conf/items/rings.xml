@@ -4,6 +4,25 @@
   
   <!-- Start Anti-poison -->
   
+  <item name="invisibility ring">
+    <type class="ring" subclass="engagemenint_ring" tileid="-1"/>
+    <description>'You see an invisibility ring that can make you invisible.'</description>
+    <implementation class-name="games.stendhal.server.entity.item.Item"/>
+    <attributes>
+    </attributes>
+    <weight value="0.1"/>
+    <value value="1"/>
+    <resistance type="poisoned" value="0.25" slots="finger;" />
+    <equipable>
+      <slot name="ground"/>
+      <slot name="content"/>
+      <slot name="bag"/>
+      <slot name="trade"/>
+      <slot name="finger"/>
+      <slot name="keyring"/>
+    </equipable>
+  </item> 
+  
   <item name="medicinal ring">
     <type class="ring" subclass="medicinal_ring" tileid="-1"/>
     <description>You see a medicinal ring. It may protect you from being poisoned.</description>
