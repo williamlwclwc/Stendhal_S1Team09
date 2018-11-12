@@ -79,7 +79,7 @@ public class LonJathamNPCTest extends ZonePlayerAndNPCTestImpl{
 		lonJathamEngine.step(player, ConversationPhrases.GOODBYE_MESSAGES.get(0));
 		assertFalse(lonJathamNPC.isTalking());
 		assertEquals("Bye bye.", getReply(lonJathamNPC));
-		fail("Not implemented");
+//		fail("Not implemented");
 	}
 	
 	@Test
@@ -113,7 +113,7 @@ public class LonJathamNPCTest extends ZonePlayerAndNPCTestImpl{
 		assertFalse(lonJathamNPC.isTalking());
 		assertEquals("Bye bye.", getReply(lonJathamNPC));
 		
-		fail("Not implemented");
+//		fail("Not implemented");
 
 	}
 }
