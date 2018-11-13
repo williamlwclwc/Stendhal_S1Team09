@@ -959,6 +959,7 @@ West: Semos
     <configurator class-name="games.stendhal.server.maps.ados.city.DogNPC" />
     <configurator class-name="games.stendhal.server.maps.ados.city.KidGhostNPC" /> 
     <configurator class-name="games.stendhal.server.maps.ados.city.HolidayingWomanNPC" />
+    <!--configurator class-name="games.stendhal.server.maps.ados.city.LonJathamNPC" /-->
     
     <entity x="83" y="9">
       <implementation class-name="games.stendhal.server.entity.mapstuff.sound.PeriodicAmbientSoundSource">
@@ -1619,6 +1620,7 @@ Please respect the privacy of other customers. Our customer advisor #Rachel will
     <!-- NPCs -->
     <configurator class-name="games.stendhal.server.maps.ados.library.LibrarianNPC" />
     <configurator class-name="games.stendhal.server.maps.ados.library.WriterNPC" />
+    <configurator class-name="games.stendhal.server.maps.ados.library.LonJathamNPC" />
     
     <entity x="4" y="27">
       <implementation class-name="games.stendhal.server.entity.mapstuff.sign.Sign"/>

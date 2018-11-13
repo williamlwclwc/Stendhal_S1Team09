@@ -1,4 +1,4 @@
-package games.stendhal.server.maps.ados.city;
+package games.stendhal.server.maps.ados.library;
 
 import static org.junit.Assert.*;
 import static utilities.SpeakerNPCTestHelper.getReply;

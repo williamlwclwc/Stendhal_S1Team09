@@ -1,4 +1,4 @@
-package games.stendhal.server.maps.ados.city;
+package games.stendhal.server.maps.ados.library;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -10,7 +10,8 @@ import games.stendhal.server.core.pathfinder.FixedPath;
 import games.stendhal.server.core.pathfinder.Node;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 
-public class LonJathamNPC implements ZoneConfigurator {
+public class LonJathamNPC implements ZoneConfigurator
+{
 
   /**
    * Configure a zone.
@@ -33,9 +34,17 @@ public class LonJathamNPC implements ZoneConfigurator {
       protected void createPath()
       {
         final List<Node> nodes = new LinkedList<Node>();
-        nodes.add(new Node(10, 10));
-        nodes.add(new Node(12, 10));
+        nodes.add(new Node( 3,  8));
+        nodes.add(new Node( 6,  8));
+        nodes.add(new Node( 6, 10));
         nodes.add(new Node( 8, 10));
+        nodes.add(new Node( 5, 10));
+        nodes.add(new Node( 5,  8));
+        nodes.add(new Node( 7,  8));
+        nodes.add(new Node( 7,  6));
+        nodes.add(new Node( 6,  6));
+        nodes.add(new Node( 6,  3));
+        nodes.add(new Node( 6,  8));
         setPath(new FixedPath(nodes, true));
       }
 
@@ -43,7 +52,7 @@ public class LonJathamNPC implements ZoneConfigurator {
       protected void createDialog()
       {
         addGreeting("Hello. Are you a cs student?");
-        // addGreeting("Good morning! Are you a Computer Science student?");
+        // addGreeting("Good morning! Are you a #Computer #Science student?");
         addReply("yes",
                  "Perfect! I hope in the University Of Manchester. Ask me whatever you want.");
         // addReply("yes",
@@ -68,13 +77,22 @@ public class LonJathamNPC implements ZoneConfigurator {
         //          "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
         // addReply("Lon Jatham",
         //          "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
+        // addReply("The University of Manchester",
+        //          "One of the best in the UK and with the best community in the world.");
+        // addReply("Computer Science",
+        //          "A very demanding subject.");
+        // Java Just in time
+        // Object ORiented Programming in Java
+        // Algorithms and Imperative Programming
+        // Distributed Systems
+        // First Year Team Project
         addGoodbye("Bye bye.");
         // addGoodbye("Stay fresh!");
 
       }
     };
-    npc.setEntityClass("lonjatham");
-    npc.setPosition(10, 10);
+    npc.setEntityClass("lonjatham4");
+    npc.setPosition(3, 8);
     npc.initHP(1000);
     npc.setDescription("You see Lon Jatham. A total legend in Java.");
     zone.add(npc);
