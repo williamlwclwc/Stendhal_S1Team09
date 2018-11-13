@@ -15,7 +15,7 @@ import utilities.ZonePlayerAndNPCTestImpl;
 
 
 public class LonJathamNPCTest extends ZonePlayerAndNPCTestImpl{
-	private static final String ZONE_NAME = "testzone";
+	private static final String ZONE_NAME = "int_ados_library";
 	
 	//private Player player = null;
 	//private SpeakerNPC lonJathamNPC = null;
