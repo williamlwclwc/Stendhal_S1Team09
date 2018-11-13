@@ -1,5 +1,6 @@
 package games.stendhal.server.maps.ados.library;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static utilities.SpeakerNPCTestHelper.getReply;
 
@@ -7,7 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import games.stendhal.server.core.engine.SingletonRepository;
+import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.npc.ConversationPhrases;
+import games.stendhal.server.entity.npc.NPC;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.fsm.Engine;
 import utilities.ZonePlayerAndNPCTestImpl;
@@ -48,6 +52,19 @@ public class LonJathamNPCTest extends ZonePlayerAndNPCTestImpl{
 		
 	}
 
+	
+	@Test
+	public void testDescriptionOfLonJatham() {
+		SingletonRepository.getRPWorld();
+		final LonJathamNPC LonJathamConfigurator = new LonJathamNPC();
+
+		final StendhalRPZone zone = new StendhalRPZone("int_ados_library");
+		LonJathamConfigurator.configureZone(zone, null);
+		assertFalse(zone.getNPCList().isEmpty());
+		final NPC lonJathamNPC = zone.getNPCList().get(0);
+		assertThat(lonJathamNPC.getName(), is("Lon Jatham"));
+		assertThat(lonJathamNPC.getDescription(), is("You see Lon Jatham. A total legend in Java."));
+	}
 	
 	@Test
 	public void testInteractionWithLonJatham() {
