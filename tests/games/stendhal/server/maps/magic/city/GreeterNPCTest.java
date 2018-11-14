@@ -15,14 +15,18 @@ package games.stendhal.server.maps.magic.city;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static utilities.SpeakerNPCTestHelper.getReply;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import games.stendhal.server.entity.item.InvisibilityRing;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.npc.fsm.Engine;
+import games.stendhal.server.entity.player.Player;
+import utilities.PlayerTestHelper;
 import utilities.QuestHelper;
 import utilities.ZonePlayerAndNPCTestImpl;
 
@@ -197,4 +201,47 @@ public class GreeterNPCTest extends ZonePlayerAndNPCTestImpl {
 		assertFalse(en.step(player, "sell summon scroll"));
 	}
 
+	/**
+	 * Tests for whether NPCs ignore the player when the player is invisible 
+	 */
+	@Test
+	public void ifPlayerIsInvisibleNPCShouldNotReply() {
+		
+		//Prepare the inputs
+		//Create a player
+		final Player player = PlayerTestHelper.createPlayer("player");
+		//Create ring
+		final InvisibilityRing ring = new InvisibilityRing();
+		
+	    // create a speakerNPC
+	    final SpeakerNPC npc = getNPC("Erodel Bmud");
+		assertNotNull(npc);
+		final Engine en = npc.getEngine();
+
+		
+		// check the npc replies when the player is visible
+		assertTrue(en.step(player, "hi Erodel Bmud"));
+		String reply = getReply(npc);
+		assertNotNull(reply);
+		assertEquals("Salutations, traveller.", reply);
+
+		
+		assertTrue(en.step(player, "bye"));
+		assertEquals("Adieu.", getReply(npc));
+
+		//Equip player with ring on finger 
+	    ring.onEquipped(player, "finger");
+	    
+	    // Test the player is invisible
+	    assertTrue(player.isInvisibleToCreatures());
+	    
+	    // Test the npc does not respond to the player
+	    npc.listenTo(player, "hi");
+	    assertNull(npc.getAttending());
+	    
+	    
+	    
+ 	    
+    }
+	
 }

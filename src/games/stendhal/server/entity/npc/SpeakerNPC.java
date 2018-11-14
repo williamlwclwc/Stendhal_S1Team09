@@ -404,7 +404,9 @@ public class SpeakerNPC extends NPC {
 					|| ((attending instanceof Player) && (((Player) attending).isDisconnected()))
 			// or if the player fell asleep ;)
 					|| ((attending instanceof Player) && (SingletonRepository.getRuleProcessor().getTurn()
-							- lastMessageTurn > playerChatTimeout))) {
+							- lastMessageTurn > playerChatTimeout))
+					// or if the player is invisible
+					|| ((attending instanceof Player) && ((Player) attending).isInvisibleToCreatures())) {
 				// we force him to say bye to NPC :)
 				endConversation();
 			}
@@ -427,7 +429,10 @@ public class SpeakerNPC extends NPC {
 		// and finally react on anybody talking to us
 		final List<Player> speakers = getNearbyPlayersThatHaveSpoken(this, getPerceptionRange());
 		for (final Player speaker : speakers) {
-			tell(speaker, speaker.get("text"));
+			
+			// if the speaker is not invisible then react
+			if (!speaker.isInvisibleToCreatures())
+			  tell(speaker, speaker.get("text"));
 		}
 
 		maybeMakeSound();
@@ -732,7 +737,7 @@ public class SpeakerNPC extends NPC {
 		}
 
 		// If we are not attending a player, attend this one.
-		if (engine.getCurrentState() == ConversationStates.IDLE) {
+		if ((engine.getCurrentState() == ConversationStates.IDLE) && (!player.isInvisibleToCreatures())) {
 			logger.debug("Attending player " + player.getName());
 			setAttending(player);
 		}
