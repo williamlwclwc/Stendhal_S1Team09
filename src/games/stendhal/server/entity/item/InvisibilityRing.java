@@ -2,6 +2,7 @@ package games.stendhal.server.entity.item;
 
 import java.util.Map;
 
+
 //import games.stendhal.common.constants.Testing;
 import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.player.Player;
@@ -28,7 +29,7 @@ public class InvisibilityRing extends SlotActivatedItem{
 	 * Create an invisibility ring 
 	 */
 	public InvisibilityRing() {
-		super("invisibility ring", "ring", "engagement_ring", null);
+		super("invisibility ring", "ring", "invisibility_ring", null);
 		put("amount", 1);
 	}
 	
