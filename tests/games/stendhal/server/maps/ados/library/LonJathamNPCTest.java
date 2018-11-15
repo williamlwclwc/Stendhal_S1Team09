@@ -36,13 +36,7 @@ public class LonJathamNPCTest extends ZonePlayerAndNPCTestImpl{
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		
-//		final StendhalRPZone zone = new StendhalRPZone("int_fado_tavern");
-//		MockStendlRPWorld.get().addRPZone(zone);
-//		new LonJathamNPC().configureZone(zone, null);
-		
-		//player = createPlayer("player");
-		
+				
 	}
 	
 	public LonJathamNPCTest() {
