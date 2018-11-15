@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+1.29uom
+*world*
+- new NPC (Lon Jatham)
+- new teleport scroll (Wofol City)
+- new item - invisibility ring
+- pushable wheelbarrows
+
 1.28
 *world*
 - many new enemy & NPC sprites

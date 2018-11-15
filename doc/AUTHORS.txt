@@ -168,16 +168,24 @@ Authors of Stendhal are:
   - Diligent Dodo (aka Soniccuz)
   · Artist (mimic, dodo, suba diving concepts)
 - Chionia Kotsalidou
+  · Coder (Lon Jatham)
   · Bugs fixer
 - Inthu Sarachchandran
+  · Coder (Invisibility Ring)
   · Bugs fixer
 - Javier Pacheco Rodriguez
+  · Coder (Lon Jatham)
+  · Artist (Lon Jatham)
   · Bugs fixer
 - Jonathan Haylett
+  · Coder (Wofol Scroll)
+  · Artist (wofol scroll icon)
   · Bugs fixer
 - Wenchang Liu
+  · Coder (Wofol Scroll, Wheelbarrows)
   · Bugs fixer
 - Yi Yu Lin (Yvetta)
+  · Coder (Invisibility Ring, Wheelbarrows)
   · Bugs fixer
 
 We also thank many who have contributed to Stendhal by providing patches,
