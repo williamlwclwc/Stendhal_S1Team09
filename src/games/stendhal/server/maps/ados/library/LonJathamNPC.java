@@ -51,43 +51,44 @@ public class LonJathamNPC implements ZoneConfigurator
       @Override
       protected void createDialog()
       {
-        addGreeting("Hello. Are you a cs student?");
-        // addGreeting("Good morning! Are you a #Computer #Science student?");
+        addGreeting("Good morning! Are you a #Computer #Science student?");
         addReply("yes",
-                 "Perfect! I hope in the University Of Manchester. Ask me whatever you want.");
-        // addReply("yes",
-        //          "Wonderful! I hope at #The #University #of #Manchester. What do you want to know about?"
+                 "Wonderful! I hope at #The #University #of #Manchester. What do you want to know about?");
         addReply("no",
-                 "What a shame. Cs is so much fun in the University Of Manchester. You can ask for information.");
-        // addReply("no",
-        //          "Oh no! CS is much more enjoyable at #The #University #of #Manchester. If you want, I can tell you more about it.");
+                 "Oh no! CS is much more enjoyable at #The #University #of #Manchester. If you want, I can tell you more about it.");
         addReply("courses",
-             "We have Java, C, Team Project, Python and many more.");
-        // addReply("courses",
-        //      "We have #Object #Oriented #Programming #in #Java, #Algorithms #and #Imperative #Programming, #First #Year #Team #Project, #Distributed #Systems ... and many more!");
+             "We have #Object #Oriented #Programming #in #Java, #Algorithms #and #Imperative #Programming, #First #Year #Team #Project, #Distributed #Systems ... and many more!");
         addReply("lecturers",
-                 "Myself Lon Jatham and many more.");
-        // addReply("lecturers",
-        //          "We have the best experts teaching in their fields of research and me, Lon Jatham, of course!");
-        // addReply("teachers",
-        //          "We have the best experts teaching in their fields of research and me, Lon Jatham, of course!");
+                 "We have the best experts teaching in their fields of research and me, Lon Jatham, of course!");
+        addReply("teachers",
+                 "We have the best experts teaching in their fields of research and me, Lon Jatham, of course!");
         addReply("you",
-                 "I teach Java!");
-        // addReply("you",
-        //          "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
-        // addReply("Lon Jatham",
-        //          "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
-        // addReply("The University of Manchester",
-        //          "One of the best in the UK and with the best community in the world.");
-        // addReply("Computer Science",
-        //          "A very demanding subject.");
-        // Java Just in time
-        // Object ORiented Programming in Java
-        // Algorithms and Imperative Programming
-        // Distributed Systems
-        // First Year Team Project
-        addGoodbye("Bye bye.");
-        // addGoodbye("Stay fresh!");
+                 "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
+        addReply("Lon Jatham",
+                 "My name is Lon Jatham and I teach Java using #my own book: #Java #just #in #time!");
+        addReply("The University of Manchester",
+                 "One of the best in the UK and with the best community in the world.");
+        addReply("Computer Science",
+                 "A very demanding subject.");
+        addReply("Java Just in time",
+                 "Using neither the confusing 'objects first' approach, nor the confidence destroying 'objects late' ordering, students are instead taken gently from their natural 'task oriented' view of problem solving, through the basics of programming and then soon onto objects.");
+        addReply("Object Oriented Programming in Java",
+                 "The course assumes no previous experience of programming, and is based on the book #Java #Just #in #Time");
+        addReply("Algorithms and Imperative Programming",
+                 "This is a two-semester practical introduction to algorithms and data structures, concentrating on devising and using algorithms, including algorithm design and performance");
+        addReply("Distributed Systems",
+                 "This course unit aims to provide students with a basic understanding of distributed computing, drawing on their general experience as users of distributed applications to inform the discovery, description and classification of fundamental concepts in distributed systems.");
+        addReply("First Year Team Project",
+                 "This course unit is all about teamwork, communication, and active learning");
+        addReply("Computer Engineering",
+                 "This course introduces digital logic and its application in computer organisation and design.");
+        addReply("Computer Architecture",
+                 "This unit aims to introduce computer instruction sets and the binary representation of information");
+        addReply("Artificial Intelligence",
+                 "The course teaches some of the fundamental techniques used currently in Artificial Intelligence: primarily how to represent knowledge and recognise patters in a probabilistic fashion.");
+        addReply("Machine Learning",
+                 "Machine learning is concerned with creating learning models that allow a computer to exhibit behaviour that would normally require a human.");
+        addGoodbye("Good Morning!");
 
       }
     };
