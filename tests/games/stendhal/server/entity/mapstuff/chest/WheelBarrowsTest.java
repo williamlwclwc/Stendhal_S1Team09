@@ -1,5 +1,5 @@
 
-package games.stendhal.server.entity.mapstuff.block;
+package games.stendhal.server.entity.mapstuff.chest;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -36,19 +36,17 @@ public class WheelBarrowsTest {
 	public void testWheelBarrowExists()
 	{
 		//Create a wheel barrow 
-		Block wheelBarrow = new Block(true);
+		WheelBarrow wheelBarrow = new WheelBarrow();
 		
-		//Check whether wheel barrow is an instance of block 
-		assertTrue(wheelBarrow instanceof Block);
 		//Check the description 
-		assertEquals("You have seen a wheel barrow, that allows you to push it to wherever, to upload the contents into a chest or to give to another player", ((Block)wheelBarrow).getDescription());
+		assertEquals("You have seen a wheel barrow, that allows you to push it to wherever, to unload the contents into a chest or to give to another player", wheelBarrow.getDescription());
 	}//testWheelBarrowExists 
 
 
 	@Test
 	public void testPushingWheelBarrow() {
 		//Create a wheel barrow 
-		WheelBarrow wheelBarrow = new WheelBarrow(true);
+		WheelBarrow wheelBarrow = new WheelBarrow();
 		//Set up the position 
 		wheelBarrow.setPosition(0, 0);
 		//Create a player 
@@ -59,58 +57,58 @@ public class WheelBarrowsTest {
 		
 		//Get the current position 
 		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getY()), is(Integer.valueOf(0)));
 		
 		//Push it to the right and test the position 
 		wheelBarrow.push(player, Direction.RIGHT);
 		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(1)));
-		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getY()), is(Integer.valueOf(0)));
 		
 		//Push it to the left and test the position 
 		wheelBarrow.push(player, Direction.LEFT);
 		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getY()), is(Integer.valueOf(0)));
 		
 		//Push it down and test the position 
 		wheelBarrow.push(player, Direction.DOWN);
 		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(1)));
+		assertThat(Integer.valueOf(wheelBarrow.getY()), is(Integer.valueOf(1)));
 		
 		//Push it up and test the position 
 		wheelBarrow.push(player, Direction.UP);
 		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getX()), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getY()), is(Integer.valueOf(0)));
 	}//testPushingWheelBarrow
 
 
 	@Test
 	public void testWheelBarrowCoordinatesAfterPush() {
 		//Create a wheel barrow 
-		WheelBarrow wheelBarrow = new WheelBarrow(true);
+		WheelBarrow wheelBarrow = new WheelBarrow();
 		//Set up the position 
 		wheelBarrow.setPosition(0, 0);
 		
 		//Push from up to down 
 		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.UP)), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.UP)), is(Integer.valueOf(-1)));
+		assertThat(Integer.valueOf(wheelBarrow.getYAfterPush(Direction.UP)), is(Integer.valueOf(-1)));
 		
 		//Push from down to up 
 		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.DOWN)), is(Integer.valueOf(0)));
-		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.DOWN)), is(Integer.valueOf(1)));
+		assertThat(Integer.valueOf(wheelBarrow.getYAfterPush(Direction.DOWN)), is(Integer.valueOf(1)));
 		
 		//Push from left to right 
 		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.LEFT)), is(Integer.valueOf(-1)));
-		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.LEFT)), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getYAfterPush(Direction.LEFT)), is(Integer.valueOf(0)));
 		
 		//Push from right to left 
 		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.RIGHT)), is(Integer.valueOf(1)));
-		assertThat(Integer.valueOf(wheelBarrow.getXAfterPush(Direction.RIGHT)), is(Integer.valueOf(0)));
+		assertThat(Integer.valueOf(wheelBarrow.getYAfterPush(Direction.RIGHT)), is(Integer.valueOf(0)));
 	}//testsWheelBarrowCoordinatesAfterPush 
 	
 	@Test 
 	public final void testWheelBarrowOnUsed() {
 		//Create a wheel barrow 
-		WheelBarrow wheelBarrow = new WheelBarrow(true);
+		WheelBarrow wheelBarrow = new WheelBarrow();
 		//Assert false that wheel barrow is opened 
 		assertFalse(wheelBarrow.isOpen());
 		//Use wheel barrow 

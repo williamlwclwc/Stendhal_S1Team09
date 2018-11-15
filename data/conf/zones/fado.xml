@@ -38,6 +38,9 @@
     <configurator class-name="games.stendhal.server.maps.fado.city.NunNPC" />
     <configurator class-name="games.stendhal.server.maps.fado.city.SmallBoyNPC" />
     <configurator class-name="games.stendhal.server.maps.fado.city.RabbitNPC" />
+    
+    <!-- WheelBarrow beta for fado city -->
+    <configurator class-name="games.stendhal.server.entity.mapstuff.chest.WheelbarrowConfig" />
 
     <!-- Gates -->
     <entity x="55" y="22">
