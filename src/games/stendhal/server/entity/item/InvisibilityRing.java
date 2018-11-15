@@ -29,7 +29,7 @@ public class InvisibilityRing extends SlotActivatedItem{
 	 * Create an invisibility ring 
 	 */
 	public InvisibilityRing() {
-		super("invisibility ring", "ring", "invisibility_ring", null);
+		super("invisibility ring", "ring", "invisibility-ring", null);
 		put("amount", 1);
 	}
 	
