@@ -19,7 +19,7 @@ import utilities.PlayerTestHelper;
 import utilities.RPClass.BlockTestHelper;
 
 
-public class WheelBarrowsTest {
+public class WheelBarrowTest {
 
 
 	@BeforeClass

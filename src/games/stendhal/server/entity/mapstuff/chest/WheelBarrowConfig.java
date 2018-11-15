@@ -6,7 +6,7 @@ import games.stendhal.server.core.config.ZoneConfigurator;
 import games.stendhal.server.core.engine.SingletonRepository;
 import games.stendhal.server.core.engine.StendhalRPZone;
 
-public class WheelbarrowConfig implements ZoneConfigurator{
+public class WheelBarrowConfig implements ZoneConfigurator{
 	//
 	// ZoneConfigurator
 	//
