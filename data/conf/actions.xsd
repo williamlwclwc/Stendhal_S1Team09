@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="stendhal"
+	xmlns:tns="http://www.example.org/actions" elementFormDefault="qualified"
+	xmlns:Q1="stendhal">
+	
+	<!-- Root element (a group of actions) -->
+	<element name="actions" type="Q1:actionGroup" />
+	
+	<!-- Element type to represent a group of actions -->
+	<complexType name="actionGroup">
+		<sequence>
+			<element name="action" type="Q1:actionType" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<!-- Element type to represent an action -->
+	<complexType name="actionType">
+		<sequence>
+			<element name="implementation" type="Q1:implementation" />
+			<element name="parameters" type="Q1:parameters" minOccurs="0" maxOccurs="1" />
+			<element name="remainder" type="Q1:remainder" minOccurs="0" maxOccurs="1" />
+		</sequence>
+		<attribute name="name" type="string" use="required" />
+		<attribute name="minimumParameters" type="nonNegativeInteger" default="0" />
+		<attribute name="maximumParameters" type="nonNegativeInteger" default="0" />
+	</complexType>
+
+	<!-- Element type for specifying the class which implements the action -->
+	<complexType name="implementation">
+		<attribute name="class-name" type="string" />
+	</complexType>
+	
+	<!-- Element type to represent a list of command parameters -->
+	<complexType name="parameters">
+		<sequence>
+			<element name="parameter" type="Q1:parameter" minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<!-- Element type to represent a command parameter -->
+	<complexType name="parameter">
+		<attribute name="name" type="string" />
+		<attribute name="index" type="nonNegativeInteger" />
+	</complexType>
+	
+	<!-- Element type to represent the 'remainder' (the text after the parameters) -->
+	<complexType name="remainder">
+		<attribute name="name" type="string" />
+	</complexType>
+	
+</schema>
