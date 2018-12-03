@@ -37,8 +37,8 @@ public class SimpleActionTest {
 		};
 		//test for Simple Who action execute
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		final SimpleAction WhoAct = new SimpleAction("who", map, null, 0, 0);
-		assertTrue(WhoAct.execute(null, null));
+		final SimpleAction whoAct = new SimpleAction("who", map, null, 0, 0);
+		assertTrue(whoAct.execute(null, null));
 	}
 
 	/**
@@ -48,8 +48,8 @@ public class SimpleActionTest {
 	public void testGetMaximumParameters() {
 		//test for Simple Who action getMaxParameters
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		final SimpleAction WhoAct = new SimpleAction("who", map, null, 0, 0);
-		assertThat(WhoAct.getMaximumParameters(), is(0));
+		final SimpleAction whoAct = new SimpleAction("who", map, null, 0, 0);
+		assertThat(whoAct.getMaximumParameters(), is(0));
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class SimpleActionTest {
 	public void testGetMinimumParameters() {
 		//test for Simple Who action getMinParameters
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		final SimpleAction WhoAct = new SimpleAction("who", map, null, 0, 0);
-		assertThat(WhoAct.getMinimumParameters(), is(0));
+		final SimpleAction whoAct = new SimpleAction("who", map, null, 0, 0);
+		assertThat(whoAct.getMinimumParameters(), is(0));
 	}
 	
 }
