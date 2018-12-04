@@ -20,5 +20,112 @@
 		<parameter name="y" index="3" />
 	  </parameters>
 	</action>
+
+
+    <!-- AcceptChallenge.java -->
+    <action name="acceptChallenge" minimumParameters="1" maximumParameters="1">
+      <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+      </parameters>
+      <!-- Not sure about this but I think this has not yet been implemented -->
+      <!-- <remainder name="action" index="challenge"/>  -->
+    </action>
+    
+    
+    <!-- AddBuddyAction -->
+    <!-- Contain condition, function not implemented yet -->
+    <!--     <action name="addBuddy" minimumParameters="1" maximumParameters="1">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+      </parameters>
+    </action> -->
+
+    <!-- AdminLevelAction -->
+    <action name="adminLevel" minimumParameters="1" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+        <!-- Not sure about this -->
+        <parameter name="newlevel" index="1" />
+      </parameters>
+    </action>
+
+    <!-- AdminNoteAction -->
+    <action name="adminNote" minimumParameters="1" maximumParameters="1">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+      </parameters>
+      <!-- Not sure about this -->
+      <remainder name="note" />
+    </action>   
+
+    <!-- AlterAction -->
+    <action name="alter" minimumParameters="3" maximumParameters="3">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="stat" index="1" />
+        <parameter name="mode" index="2" />
+      </parameters>
+      <!-- Not sure about this -->
+      <remainder name="value" />
+    </action>
+	
+	<!-- AlterCreatureAction -->
+    <action name="alterCreature" minimumParameters="2" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="stat" index="1" />
+      </parameters>
+    </action>
+
+    <!-- AlterQuestAction -->
+    <!-- Contain condition, function not implemented yet -->
+    <!--     <action name="alterQuest" minimumParameters="3" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="name" index="1" />
+        <parameter name="state" index="2" />
+      </parameters>
+    </action> -->
+
+    <!-- AnswerAction -->
+    <action name="answer" minimumParameters="1" maximumParameters="0">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <!-- Not sure about this -->
+      <remainder name="text" />
+    </action>
+
+    <!-- AtlasBrowserLaunchCommand -->
+    <!-- Not a basic simple class, will be implemented later -->
+    <!--     <action name="alter">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    </action> -->
+
+    <!-- AutoWalkAction -->
+    <!-- Not a basic key/pair class -->
+    <!--<action name="autoWalk">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    </action>  -->
+
+    <!-- AutoWalkStopAction -->
+    <!-- Not a basic key/pair class -->
+    <!--<action name="autoWalkStop">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <remainder name="stop" />
+    </action>  -->
+    
+    <!-- AwayAction -->
+    <!-- Contain condition, function not implemented yet -->
+    <!--     <action name="away">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+      <remainder name="message" />
+    </action> -->
+    
 	
 </actions>
