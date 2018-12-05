@@ -3,16 +3,16 @@
 	xsi:schemaLocation="stendhal actions.xsd ">
 	
 	<action name="who">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	</action>
 
 	<action name="where">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	  <remainder name="target" />
 	</action>
 
 	<action name="teleport" minimumParameters="4" maximumParameters="4">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	  <parameters>
 		<parameter name="target" index="0" />
 		<parameter name="zone" index="1" />
@@ -23,8 +23,8 @@
 
 
     <!-- AcceptChallenge.java -->
-    <action name="acceptChallenge" minimumParameters="1" maximumParameters="1">
-      <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <action name="challenge" minimumParameters="1" maximumParameters="1">
+      <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
       </parameters>
@@ -35,16 +35,16 @@
     
     <!-- AddBuddyAction -->
     <!-- Contain condition, function not implemented yet -->
-    <!--     <action name="addBuddy" minimumParameters="1" maximumParameters="1">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!--     <action name="addbuddy" minimumParameters="1" maximumParameters="1">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
       </parameters>
     </action> -->
 
     <!-- AdminLevelAction -->
-    <action name="adminLevel" minimumParameters="1" maximumParameters="2">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <action name="adminlevel" minimumParameters="1" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
         <!-- Not sure about this -->
@@ -53,8 +53,8 @@
     </action>
 
     <!-- AdminNoteAction -->
-    <action name="adminNote" minimumParameters="1" maximumParameters="1">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <action name="adminnote" minimumParameters="1" maximumParameters="1">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
       </parameters>
@@ -64,7 +64,7 @@
 
     <!-- AlterAction -->
     <action name="alter" minimumParameters="3" maximumParameters="3">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
         <parameter name="stat" index="1" />
@@ -75,8 +75,8 @@
     </action>
 	
 	<!-- AlterCreatureAction -->
-    <action name="alterCreature" minimumParameters="2" maximumParameters="2">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <action name="altercreature" minimumParameters="2" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
         <parameter name="stat" index="1" />
@@ -85,8 +85,8 @@
 
     <!-- AlterQuestAction -->
     <!-- Contain condition, function not implemented yet -->
-    <!--     <action name="alterQuest" minimumParameters="3" maximumParameters="2">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!--     <action name="alterquest" minimumParameters="3" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
         <parameter name="name" index="1" />
@@ -96,40 +96,40 @@
 
     <!-- AnswerAction -->
     <action name="answer" minimumParameters="1" maximumParameters="0">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <!-- Not sure about this -->
       <remainder name="text" />
     </action>
 
     <!-- AtlasBrowserLaunchCommand -->
     <!-- Not a basic simple class, will be implemented later -->
-    <!--     <action name="alter">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!--     
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action> -->
 
     <!-- AutoWalkAction -->
     <!-- Not a basic key/pair class -->
-    <!--<action name="autoWalk">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!--
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>  -->
 
     <!-- AutoWalkStopAction -->
     <!-- Not a basic key/pair class -->
-    <!--<action name="autoWalkStop">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!--
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <remainder name="stop" />
     </action>  -->
     
     <!-- AwayAction -->
     <!-- Contain condition, function not implemented yet -->
     <!--     <action name="away">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <remainder name="message" />
     </action> -->
     
     <!-- BanAction -->
     <action name="ban" minimumParameters="2" maximumParameters="2">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
         <parameter name="hours" index="1" />
@@ -140,14 +140,14 @@
     
     <!-- BareBonesBrowserLaunchCommand -->
     <!-- Not a simple key/pair class -->
-    <!-- <action name="bareBoneBrowserCommand">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!-- 
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>    -->
     
     <!-- CastSpellAction -->
     <!-- Contain condition which has not been implemented yet -->
-    <!-- <action name="castSpell" minimumParameters="2" maximumParameters="2">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!-- <action name="castspell" minimumParameters="2" maximumParameters="2">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="baseitem" index="0" />
       </parameters>
@@ -155,31 +155,33 @@
     </action>    -->
     
     <!-- ClearChatLogAction -->
-    <action name="clearChatLog">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!-- No action name is the class -->
+    <!-- <action name="clearChatLog">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>   
-    
+     -->
+     
     <!-- ClickModeAction -->
     <!-- Not a basic class, contains condition -->
-    <!-- <action name="clickMode">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!-- <action name="clickmode">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>   --> 
     
     <!-- ClientInfoAction -->
     <!-- Not a basic class, contains condition -->
-    <!-- <action name="clientInfo">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <!-- <action name="clientinfo">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>    -->
     
     <!-- ConfigAction -->
     <!-- Contain condition, not a basic class -->
     <!-- <action name="config" minimumParameters="1" maximumParameters="1">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action>    -->
 	
 	<!-- CreateChallengeAction -->
-    <action name="createChallenge" minimumParameters="1" maximumParameters="1">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+    <action name="challenge" minimumParameters="1" maximumParameters="1">
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
       </parameters>
