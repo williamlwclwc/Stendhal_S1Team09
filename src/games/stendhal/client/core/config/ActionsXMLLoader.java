@@ -19,8 +19,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import games.stendhal.client.core.rule.defaultruleset.DefaultAction;
-import games.stendhal.server.core.config.SpellXMLLoader;
-
 
 
 public class ActionsXMLLoader extends DefaultHandler {
@@ -58,7 +56,7 @@ public class ActionsXMLLoader extends DefaultHandler {
 			// Parse the input
 			final SAXParser saxParser = factory.newSAXParser();
 
-			final InputStream is = SpellXMLLoader.class.getResourceAsStream(uri.getPath());
+			final InputStream is = ActionsXMLLoader.class.getResourceAsStream(uri.getPath());
 
 			if (is == null) {
 				throw new FileNotFoundException("cannot find resource '" + uri
