@@ -123,11 +123,11 @@
     </action>
     
     <!-- AwayAction -->
-    <!-- Contain condition, function not implemented yet -->
-    <!--     <action name="away">
+    <action name="away">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
+	  <!-- Contain condition, function not implemented yet -->
       <remainder name="message" />
-    </action> -->
+    </action> 
     
     <!-- BanAction -->
     <action name="ban" minimumParameters="2" maximumParameters="2">
@@ -148,7 +148,7 @@
     
     <!-- CastSpellAction -->
     <!-- Contain condition which has not been implemented yet -->
-    <!-- <action name="castspell" minimumParameters="2" maximumParameters="2">
+    <!-- <action name="cast_spell" minimumParameters="2" maximumParameters="2">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="baseitem" index="0" />
