@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal actions.xsd ">
+	
+	<action name="who">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	</action>
+
+	<action name="where">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <remainder name="target" />
+	</action>
+
+	<action name="teleport" minimumParameters="4" maximumParameters="4">
+	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <parameters>
+		<parameter name="target" index="0" />
+		<parameter name="zone" index="1" />
+		<parameter name="x" index="2" />
+		<parameter name="y" index="3" />
+	  </parameters>
+	</action>
+
+</actions>
