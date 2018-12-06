@@ -44,23 +44,30 @@ public class ActionXMLLoaderTest {
 		assertThat(action.getName(), is("whoTest"));
 		assertThat(action.getImplementationClass(), notNullValue());
 		assertThat(action.getImplementationClass().getName(), is("games.stendhal.client.actions.SlashAction"));
+		assertThat(action.getMinimumParameters(), is(Integer.valueOf(0)));
+		assertThat(action.getMaximumParameters(), is(Integer.valueOf(0)));
 		assertThat(action.getRemainder(), is(""));
 		assertTrue(action.getParameters().isEmpty());
+		
 		
 		//for "where"
 		DefaultAction action2 = iterator.next();
 		assertThat(action2.getName(), is("whereTest"));
 		assertThat(action2.getImplementationClass(), notNullValue());
 		assertThat(action2.getImplementationClass().getName(), is("games.stendhal.client.actions.SlashAction"));
+		assertThat(action2.getMinimumParameters(), is(Integer.valueOf(0)));
+		assertThat(action2.getMaximumParameters(), is(Integer.valueOf(0)));
 		assertThat(action2.getRemainder(), is("target"));
-		assertTrue(action.getParameters().isEmpty());
+		assertTrue(action2.getParameters().isEmpty());
 		
 		//for "teleport"
 		DefaultAction action3 = iterator.next();
 		assertThat(action3.getName(), is("teleportTest"));
 		assertThat(action3.getImplementationClass(), notNullValue());
 		assertThat(action3.getImplementationClass().getName(), is("games.stendhal.client.actions.SlashAction"));
-		assertThat(action.getRemainder(), is(""));
+		assertThat(action3.getMinimumParameters(), is(Integer.valueOf(4)));
+		assertThat(action3.getMaximumParameters(), is(Integer.valueOf(4)));
+		assertThat(action3.getRemainder(), is(""));
 		Map<String, Integer> param;
 		param = action3.getParameters();
 		assertThat(param, notNullValue());

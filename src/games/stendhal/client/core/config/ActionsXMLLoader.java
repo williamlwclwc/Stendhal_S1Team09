@@ -41,13 +41,15 @@ public class ActionsXMLLoader extends DefaultHandler {
 		
 	private List<DefaultAction> loadedActions;
 	
+	private int minimumParameters;
+	private int maximumParameters;
 	
-	
+	//constructor for the loader
 	public ActionsXMLLoader(final URI uri) {
 		this.uri = uri;
 	}
 
-
+	//method to load the xml
 	public List<DefaultAction> load() throws SAXException {
 		loadedActions = new LinkedList<DefaultAction>();
 		// Use the default (non-validating) parser
@@ -76,17 +78,23 @@ public class ActionsXMLLoader extends DefaultHandler {
 		return loadedActions;
 	}
 	
-	
+	//method to put values into the variables
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
 		if(qName.equals("action")) {
+			//if key is action then search for name, minimumParameters and maximumParameters
 			name = attributes.getValue("name");
+			if (attributes.getValue("minimumParameters") != null)
+				minimumParameters = Integer.parseInt(attributes.getValue("minimumParameters"));
+			if (attributes.getValue("maximumParameters") != null)
+				maximumParameters = Integer.parseInt(attributes.getValue("maximumParameters"));
 		}
 		if(qName.equals("implementation")) {
 			implementation = attributes.getValue("class-name");
 		}
 		if(qName.equals("remainder")) {
+			//set the remainder flag as true
 			remainderFlag = true;
 			remainder = attributes.getValue("name");
 		}
@@ -98,13 +106,7 @@ public class ActionsXMLLoader extends DefaultHandler {
 			String tempName = null;
 			int index = -1;
 			
-//			for (int i = 0; i < attributes.getLength(); i++) {
-//				if (attributes.getQName(i).equals("name")) {
-//					tempName = attributes.getValue(i);
-//				} else if (attributes.getQName(i).equals("index")) {
-//					index = Integer.parseInt(attributes.getValue(i));
-//				}
-//			}
+			//get name and index for each parameter key
 			tempName = attributes.getValue("name");
 			index = Integer.parseInt(attributes.getValue("index"));
 		
@@ -119,6 +121,7 @@ public class ActionsXMLLoader extends DefaultHandler {
 	}//startElements
 	
 	
+	//methods to create a default action object
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
@@ -126,11 +129,19 @@ public class ActionsXMLLoader extends DefaultHandler {
 			DefaultAction action = new DefaultAction(name, implementation);
 			if(remainderFlag) {
 				action.setRemainder(remainder);
+				//close remainder flag
 				remainderFlag = false;
 			}
 			if(parameterValues != null && !parameterValues.isEmpty()) {
 				action.setParameters(parameterValues);
 			}
+			if(minimumParameters != 0) {
+				action.setMinimumParameters(minimumParameters);
+			}
+			if(maximumParameters != 0) {
+				action.setMaximumParameters(maximumParameters);
+			}
+				
 			loadedActions.add(action);
 		}
 		if(qName.equals("parameters")) {
