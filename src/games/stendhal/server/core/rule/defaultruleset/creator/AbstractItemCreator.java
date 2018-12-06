@@ -16,6 +16,7 @@ import java.lang.reflect.Constructor;
 
 import org.apache.log4j.Logger;
 
+import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
 import games.stendhal.server.core.rule.defaultruleset.DefaultItem;
 import games.stendhal.server.entity.item.Item;
 

@@ -14,6 +14,7 @@ package games.stendhal.server.core.rule.defaultruleset.creator;
 
 import java.lang.reflect.Constructor;
 
+import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
 import games.stendhal.server.core.rule.defaultruleset.DefaultSpell;
 import games.stendhal.server.entity.spell.Spell;
 
