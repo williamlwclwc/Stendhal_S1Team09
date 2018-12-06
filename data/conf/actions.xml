@@ -34,20 +34,19 @@
     
     
     <!-- AddBuddyAction -->
-    <!-- Contain condition, function not implemented yet -->
-    <!--     <action name="addbuddy" minimumParameters="1" maximumParameters="1">
+    <action name="addbuddy" minimumParameters="1" maximumParameters="1">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
       </parameters>
-    </action> -->
+    </action>
 
     <!-- AdminLevelAction -->
     <action name="adminlevel" minimumParameters="1" maximumParameters="2">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
-        <!-- Not sure about this -->
+        <!-- Not sure about this, there is condition for this parameter -->
         <parameter name="newlevel" index="1" />
       </parameters>
     </action>
@@ -79,7 +78,7 @@
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
       <parameters>
         <parameter name="target" index="0" />
-        <parameter name="stat" index="1" />
+        <parameter name="text" index="1" />
       </parameters>
     </action>
 
@@ -108,17 +107,20 @@
     </action> -->
 
     <!-- AutoWalkAction -->
-    <!-- Not a basic key/pair class -->
-    <!--
+    <action name="walk">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
-    </action>  -->
+      <!-- Not sure about this -->
+      <remainder name="target" />
+    </action>
 
     <!-- AutoWalkStopAction -->
-    <!-- Not a basic key/pair class -->
-    <!--
+    <action name="walk">
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
-      <remainder name="stop" />
-    </action>  -->
+      <!-- Not sure about this -->
+      <remainder name="target" />
+      <!-- Not sure about this but I think this has not yet been implemented -->
+      <!-- <remainder name="mode" index="stop"/>  -->
+    </action>
     
     <!-- AwayAction -->
     <!-- Contain condition, function not implemented yet -->
