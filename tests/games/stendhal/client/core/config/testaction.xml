@@ -3,16 +3,16 @@
 	xsi:schemaLocation="stendhal actions.xsd ">
 	
 	<action name="whoTest">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	</action>
 
 	<action name="whereTest">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	  <remainder name="target" />
 	</action>
 
 	<action name="teleportTest" minimumParameters="4" maximumParameters="4">
-	  <implementation class-name="games.stendhal.client.actions.SlashAction" />
+	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	  <parameters>
 		<parameter name="target" index="0" />
 		<parameter name="zone" index="1" />

@@ -1,16 +1,35 @@
+/* $Id$ */
+/***************************************************************************
+ *                   (C) Copyright 2003-2010 - Stendhal                    *
+ ***************************************************************************
+ ***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 package games.stendhal.client.core.rule.defaultruleset;
 
+import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import games.stendhal.client.actions.SlashAction;
+import games.stendhal.client.core.rule.defaultruleset.creator.FullActionCreator;
+import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
+
 public class DefaultAction {
 	
-	/** the logger instance. */
+	// The logger instance.
 	private static final Logger logger = Logger.getLogger(DefaultAction.class);
 	
-	/** Action name. */
+	private AbstractCreator<SlashAction> creator;
+	
+	// Action name.
 	private String name;
 	
 	private Class<?> implementationClass;
@@ -21,10 +40,14 @@ public class DefaultAction {
 	
 	private int maximumParameters;
 	
-	//all parameters hashmap
+	// All parameters HashMap.
 	private Map<String, Integer> parameters;
 	
-	//constructor
+	/**
+	 * Creates a new {@link DefaultAction}
+	 * @param name the name of that action
+	 * @param clazzName class name
+	 */
 	public DefaultAction(String name, String clazzName) {
 		try {
 			this.name = name;
@@ -33,12 +56,39 @@ public class DefaultAction {
 			this.parameters = new HashMap<String, Integer>();
 			this.minimumParameters = 0;
 			this.maximumParameters = 0;
+			this.buildCreator(implementationClass);
 		} catch (ClassNotFoundException e) {
 			logger.error("Error while creating DefaultAction", e);
 		}
 	}
-	
-	//method to get the implementation class
+
+	private void buildCreator(final Class< ? > implementation) {
+		try {
+			Constructor< ? > construct;
+			construct = implementation.getConstructor(
+					new Class[] { String.class, Map.class, String.class, int.class, int.class });
+
+			this.creator = new FullActionCreator(this, construct);
+		} catch (final NoSuchMethodException ex) {
+			logger.error("No matching full constructor for SlashAction found.", ex);
+		}
+	}
+
+	/**
+	 * Creates a new instance using the configured implementation class of that action
+	 *
+	 * @return an instance of the specified implementation class
+	 */
+	public SlashAction getAction() {
+		if (creator == null) {
+			return null;
+		}
+		return creator.create();
+	}
+
+	/**
+	 * @return the class object specified in the xml configuration
+	 */
 	public Class<?> getImplementationClass() {
 		return implementationClass;
 	}
@@ -58,33 +108,33 @@ public class DefaultAction {
 		return remainder;
 	}
 	
-	//methods to put all parameters from a hash map to the default action's one
+	// Methods to put all parameters from a hash map to the default action's one.
 	public void setParameters(Map<String, Integer> parameterValues) {
 		this.parameters.putAll(parameterValues);
 	}
 	
-	////accessor method for the parameters
+	// Accessor method for the parameters.
 	public Map<String, Integer> getParameters() {
 		return parameters;
 	}
 
-	//method to set the minimum parameters
+	// Method to set the minimum parameters.
 	public void setMinimumParameters(int minParam) {
 		this.minimumParameters = minParam;
 	}
 
-	//method to access minimum parameters
+	// Method to access minimum parameters.
 	public int getMinimumParameters()
 	{
 		return minimumParameters;
 	}
 	
-	//method to set maximum parameters
+	// Method to set maximum parameters.
 	public void setMaximumParameters(int maxParam) {
 		this.maximumParameters = maxParam;
 	}
 	
-	//method to access maximum parameters
+	// Method to access maximum parameters.
 	public int getMaximumParameters()
 	{
 		return maximumParameters;
