@@ -10,7 +10,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-package games.stendhal.server.core.rule.defaultruleset.creator;
+package games.stendhal.common.core.rule.defaultruleset.creator;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

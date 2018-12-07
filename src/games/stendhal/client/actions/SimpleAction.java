@@ -17,7 +17,7 @@ public class SimpleAction implements SlashAction {
 	final private int min; // minimum parameters
 	
 	// SimpleAction constructor
-	SimpleAction(String name, HashMap<String, Integer> parameters, String remainderName, int max, int min) {
+	public SimpleAction(String name, Map<String, Integer> parameters, String remainderName, int max, int min) {
 		this.name = name;
 		this.parameters.putAll(parameters);
 		this.remainderName = remainderName;

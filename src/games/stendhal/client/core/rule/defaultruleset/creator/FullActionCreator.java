@@ -10,30 +10,26 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-package games.stendhal.server.core.rule.defaultruleset.creator;
+package games.stendhal.client.core.rule.defaultruleset.creator;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
-import org.apache.log4j.Logger;
+import games.stendhal.client.core.rule.defaultruleset.DefaultAction;
+import games.stendhal.client.actions.SlashAction;
 
-import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
-import games.stendhal.server.core.rule.defaultruleset.DefaultItem;
-import games.stendhal.server.entity.item.Item;
+public class FullActionCreator extends AbstractActionCreator {
 
-/**
- * Base item creator (using a constructor).
- */
-abstract class AbstractItemCreator extends AbstractCreator<Item>{
-
-	static final Logger logger = Logger.getLogger(AbstractItemCreator.class);
-
-	/**
-	 *
-	 */
-	final DefaultItem defaultItem;
-
-	public AbstractItemCreator(DefaultItem defaultItem, final Constructor< ? > construct) {
-		super(construct, "Item");
-		this.defaultItem = defaultItem;
+	public FullActionCreator(DefaultAction defaultAction, Constructor<?> construct) {
+		super(defaultAction, construct);
 	}
+
+	@Override
+	protected SlashAction createObject() throws IllegalAccessException,
+			InstantiationException, InvocationTargetException {
+		return (SlashAction) construct.newInstance(defaultAction.getName(),
+				defaultAction.getParameters(), defaultAction.getRemainder(),
+				defaultAction.getMaximumParameters(), defaultAction.getMinimumParameters());
+	}
+
 }
