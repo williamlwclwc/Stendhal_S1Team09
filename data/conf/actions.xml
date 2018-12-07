@@ -195,7 +195,7 @@
 =======
 
 
-<!-- DropAction.java -->
+<!-- DropAction.java UNFINISHED -->
 <actions name= "dropAction" minimumParameters="1" maximumParameters="1">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
@@ -223,7 +223,7 @@
  
 </actions>
 
-<!-- GMHelpAction.java -->
+<!-- GMHelpAction.java  UNFINISHED-->
 <actions name= "gmHelpAction" minimumParameters="0" maximumParameters="1">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
@@ -306,7 +306,7 @@
  
 </actions>
 
-<!-- MessageAction.java -->
+<!-- MessageAction.java UNFINISHED -->
 <actions name= "messageAction" minimumParameters="1" maximumParameters="1">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
@@ -386,7 +386,7 @@
         <parameter name="duration" index="1" />
    </parameters>
  
- <!-- SoundAction.java -->
+ <!-- SoundAction.java  UNFINISHED-->
 <actions name= "soundAction" minimumParameters="0" maximumParameters="5">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
@@ -406,28 +406,38 @@
  
 </actions>
 
-<!-- SummonAction.java -->
+<!-- SummonAction.java  UNSURE IF THIS IS RIGHT-->
 <actions name= "summonAction" minimumParameters="1" maximumParameters="9">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
+    <parameter name="str" index="0" />
+    <parameter name="str" index="1" />
+    <parameter name="str" index="2" />
+    <parameter name="str" index="3" />
+    <parameter name="str" index="4" />
+    <parameter name="str" index="5" />
+    <parameter name="str" index="6" />
+    <parameter name="str" index="7" />
+    <parameter name="str" index="8" />
+    <parameter name="str" index="9" />
   
-   </parameters>
+  </parameters>
  
 </actions>
 
-<!-- SummonAtAction.java -->
+<!-- SummonAtAction.java  UNSURE IF THIS IS RIGHT-->
 <actions name= "summonAtAction" minimumParameters="1" maximumParameters="9">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
   <parameters>
-        
+        <parameter name="target" index="0" />
+        <parameter name="slot" index="1" />
    </parameters>
  
 </actions>
 
 <!-- SupportAction.java -->
-<actions name= "supportAction" minimumParameters="0" maximumParameters="2">
+<actions name= "supportAction" minimumParameters="0" maximumParameters="0">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
-
  
 </actions>
 
