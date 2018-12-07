@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Upstream, based on branch 'COMP23311/EX3/slashaction_migrate_to_XML' of https://gitlab.cs.man.ac.uk/comp23311_2018/stendhal_S1Team09.git
 <actions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal actions.xsd ">
 	
@@ -191,3 +192,304 @@
       <!-- <remainder name="action" index="open"/>  -->
     </action>   
 </actions>
+=======
+
+
+<!-- DropAction.java -->
+<actions name= "dropAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+   </parameters>
+ 
+</actions>
+
+
+<!-- EmoteAction.java -->
+<actions name= "emoteAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+</actions>
+
+
+<!-- GagAction.java -->
+<actions name= "gagAction" minimumParameters="2" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="minutes", index="1" />
+   </parameters>
+ 
+</actions>
+
+<!-- GMHelpAction.java -->
+<actions name= "gmHelpAction" minimumParameters="0" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+
+   </parameters>
+ 
+</actions>
+
+<!-- GroupManagementAction.java -->
+<actions name= "groupManagemenAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="action" index="0" />
+   </parameters>
+ 
+</actions>
+
+
+<!-- GroupMessageAction.java -->
+<actions name= "groupMessageAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+ 
+</actions>
+
+<!-- GrumpyAction.java -->
+<actions name= "grumpyAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- HelpAction.java -->
+<actions name= "helpAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  
+</actions>
+
+<!-- IgnoreAction.java -->
+<actions name= "ignoreAction" minimumParameters="0" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="duration" index="1" />
+   </parameters>
+ 
+</actions>
+
+<!-- InspectAction.java -->
+<actions name= "inspectAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        
+   </parameters>
+ 
+</actions>
+
+<!-- InvisibleAction.java -->
+<actions name= "invisibleAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- JailAction.java -->
+<actions name= "jailAction" minimumParameters="2" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="minutes" index="1" />
+   </parameters>
+ 
+</actions>
+
+<!-- ListProducersAction.java -->
+<actions name= "listProducersAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- MessageAction.java -->
+<actions name= "messageAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        
+   </parameters>
+ 
+</actions>
+
+<!-- MoveContinuousAction.java -->
+<actions name= "moveContinuousAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- MuteAction.java -->
+<actions name= "muteAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- ProfileAction.java -->
+<actions name= "profileAction" minimumParameters="0" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="name" index="0" />
+       
+   </parameters>
+ 
+</actions>
+
+<!-- QuitAction.java -->
+<actions name= "quitAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- RemessageAction.java -->
+<actions name= "ignoreAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- RemoveBuddyAction.java -->
+<actions name= "removeBuddyAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+   </parameters>
+ 
+</actions>
+
+<!-- ScreenshotAction.java -->
+<actions name= "ignoreAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- SentenceAction.java -->
+<actions name= "sentenceAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- SettingsAction.java -->
+<actions name= "settingsAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+</actions>
+
+<!-- SlashAction.java -->
+<!-- Not finished yet -->
+<actions name= "slashAction" minimumParameters="0" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="duration" index="1" />
+   </parameters>
+ 
+ <!-- SoundAction.java -->
+<actions name= "soundAction" minimumParameters="0" maximumParameters="5">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+
+   </parameters>
+ 
+</actions>
+</actions>
+
+<!-- StoreMessageAction.java -->
+<actions name= "storeMessageAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+    
+   </parameters>
+ 
+</actions>
+
+<!-- SummonAction.java -->
+<actions name= "summonAction" minimumParameters="1" maximumParameters="9">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+  
+   </parameters>
+ 
+</actions>
+
+<!-- SummonAtAction.java -->
+<actions name= "summonAtAction" minimumParameters="1" maximumParameters="9">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        
+   </parameters>
+ 
+</actions>
+
+<!-- SupportAction.java -->
+<actions name= "supportAction" minimumParameters="0" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- SupportAnswerAction.java -->
+<actions name= "supportAnswerAction" minimumParameters="1" maximumParameters="1">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+   </parameters>
+ 
+</actions>
+
+<!-- TeleportAction.java -->
+<actions name= "teleportAction" minimumParameters="4" maximumParameters="4">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="zone" index="1" />
+        <parameter name = "x" index = "2"/>
+        <parameter name = "y" index = "3"/>
+   </parameters>
+ 
+</actions>
+
+<!-- TeleportToAction.java -->
+<actions name= "teleportToAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+ 
+</actions>
+
+<!-- TellAllAction.java -->
+<actions name= "tellAllAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+ 
+</actions>
+
+<!-- TravelLogAction.java -->
+<actions name= "travelLogAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+ 
+</actions>
+
+<!-- VolumeAction.java -->
+<actions name= "volumeAction" minimumParameters="0" maximumParameters="2">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+  <parameters>
+      
+   </parameters>
+ 
+</actions>
+
+<!-- WhereAction.java -->
+<actions name= "whereAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+</actions>
+
+<!-- WhoAction.java -->
+<actions name= "whoAction" minimumParameters="0" maximumParameters="0">
+ <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
+
+</actions>
+
+>>>>>>> 61ec2af Migrate classes to xml - the rest
