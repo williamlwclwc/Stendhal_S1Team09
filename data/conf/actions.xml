@@ -205,7 +205,6 @@
 </actions>
 
 
-
 <!-- EmoteAction.java -->
 <actions name= "emoteAction" minimumParameters="0" maximumParameters="0">
  <implemenation class-name = "games.stendhal.client.actions.SlashAction" />
