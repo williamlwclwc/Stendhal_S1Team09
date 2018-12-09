@@ -54,34 +54,20 @@ public class SlashActionRepository {
         for (DefaultAction eachAction : ListOfXMLActions)
         {
           actions.put(eachAction.getName(), eachAction.getAction());
-          System.out.println("added custom action");
         }
       }
       catch (Exception e)
       {
         // No need to do anything special
     	  e.printStackTrace();
-    	  System.out.println("Not added custom action");
       }
 	} catch (URISyntaxException e1) {
-		// TODO Auto-generated catch block
 		e1.printStackTrace();
-        System.out.println("Not added custom action");
-
 	}
     
     actions.put("/", new RemessageAction());
-//    actions.put("add", new AddBuddyAction());
-//    actions.put("adminlevel", new AdminLevelAction());
-//    actions.put("adminnote", new AdminNoteAction());
-//    actions.put("alter", new AlterAction());
-//    actions.put("altercreature", new AlterCreatureAction());
-    actions.put("alterquest", new AlterQuestAction());
-//    actions.put("answer", new AnswerAction());
+    actions.put("alter", new AlterAction());
     actions.put("atlas", new AtlasBrowserLaunchCommand());
-//    actions.put("away", new AwayAction());
-
-//    actions.put("ban", new BanAction());
 
     actions.put("clear", new ClearChatLogAction());
     actions.put("clickmode", new ClickModeAction());
@@ -93,37 +79,22 @@ public class SlashActionRepository {
 
     actions.put("cast", new CastSpellAction());
 
-//    actions.put("gag", new GagAction());
     actions.put("gmhelp", new GMHelpAction());
     actions.put("group", new GroupManagementAction(groupMessage));
-//    actions.put("groupmessage", groupMessage);
-//    actions.put("grumpy", new GrumpyAction());
 
     actions.put("help", help);
 
     actions.put("ignore", new IgnoreAction());
-//    actions.put("inspect", new InspectAction());
-//    actions.put("invisible", new InvisibleAction());
 
-//    actions.put("jail", new JailAction());
-
-//    actions.put("listproducers", new ListProducersAction());
-
-//    actions.put("me", new EmoteAction());
-//    actions.put("msg", msg);
     actions.put("mute", new MuteAction());
 
     actions.put("names", who);
 
     actions.put("p", groupMessage);
     actions.put("profile", new ProfileAction());
-//    actions.put("travellog", new TravelLogAction());
 
     actions.put("quit", new QuitAction());
 
-//    actions.put("remove", new RemoveBuddyAction());
-
-//    actions.put("sentence", new SentenceAction());
     actions.put("status", new SentenceAction()); // Alias for /sentence
     actions.put("settings", new SettingsAction());
 
@@ -131,28 +102,18 @@ public class SlashActionRepository {
     actions.put("volume", new VolumeAction());
     actions.put("vol", new VolumeAction());
 
-//    actions.put("storemessage", new StoreMessageAction());
     actions.put("postmessage", new StoreMessageAction());
 
     actions.put("summonat", new SummonAtAction());
     actions.put("summon", new SummonAction());
-//    actions.put("supportanswer", supporta);
     actions.put("supporta", supporta);
-//    actions.put("support", new SupportAction());
 
     actions.put("takescreenshot", new ScreenshotAction());
-//    actions.put("teleport", new TeleportAction());
-//    actions.put("teleportto", new TeleportToAction());
-//    actions.put("tellall", new TellAllAction());
     actions.put("tell", msg);
 
-//    actions.put("where", new WhereAction());
-//    actions.put("who", who);
     actions.putAll(BareBonesBrowserLaunchCommandsFactory.createBrowserCommands());
-//    actions.put("wrap", new WrapAction());
 
     /* Movement */
-//    actions.put("walk", new AutoWalkAction());
     actions.put("stopwalk", new AutoWalkStopAction());
     actions.put("movecont", new MoveContinuousAction());
 
