@@ -195,7 +195,7 @@
 
 
 <!-- EmoteAction.java -->
-<action name= "me" minimumParameters="0" maximumParameters="0">
+<action name= "emote" minimumParameters="0" maximumParameters="0">
  <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
 
  <remainder name="text" />
@@ -217,7 +217,7 @@
 
 
 <!-- GroupMessageAction.java -->
-<action name= "groupmessage" minimumParameters="0" maximumParameters="0">
+<action name= "group_message" minimumParameters="0" maximumParameters="0">
  <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
  
  <remainder name="text" />
@@ -252,7 +252,7 @@
 </action>
 
 <!-- JailAction.java -->
-<action name= "jailA" minimumParameters="2" maximumParameters="2">
+<action name= "jail" minimumParameters="2" maximumParameters="2">
  <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
   <parameters>
         <parameter name="target" index="0" />
@@ -273,7 +273,7 @@
 
 
 <!-- MessageAction.java -->
-	<action name= "msg" minimumParameters="1" maximumParameters="1">
+	<action name= "tell" minimumParameters="1" maximumParameters="1">
 	   <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
 	  
 	   <remainder name="reason" />
@@ -283,7 +283,7 @@
 	
 
 <!-- RemoveBuddyAction.java -->
-<action name= "remove" minimumParameters="1" maximumParameters="1">
+<action name= "removebuddy" minimumParameters="1" maximumParameters="1">
  <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
   <parameters>
         <parameter name="target" index="0" />
@@ -355,7 +355,7 @@
 </action>
 
 <!-- TravelLogAction.java -->
-<action name= "travellog" minimumParameters="0" maximumParameters="0">
+<action name= "progressstatus" minimumParameters="0" maximumParameters="0">
  <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
 
  
