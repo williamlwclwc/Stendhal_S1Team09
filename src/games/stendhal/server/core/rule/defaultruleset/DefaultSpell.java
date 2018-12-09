@@ -17,8 +17,8 @@ import java.lang.reflect.Constructor;
 import org.apache.log4j.Logger;
 
 import games.stendhal.common.constants.Nature;
+import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
 import games.stendhal.server.core.rule.EntityManager;
-import games.stendhal.server.core.rule.defaultruleset.creator.AbstractCreator;
 import games.stendhal.server.core.rule.defaultruleset.creator.FullSpellCreator;
 import games.stendhal.server.entity.spell.Spell;
 /**

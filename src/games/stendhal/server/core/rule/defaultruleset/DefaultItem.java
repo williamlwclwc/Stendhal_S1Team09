@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import games.stendhal.common.constants.Nature;
-import games.stendhal.server.core.rule.defaultruleset.creator.AbstractCreator;
+import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
 import games.stendhal.server.core.rule.defaultruleset.creator.AttributesItemCreator;
 import games.stendhal.server.core.rule.defaultruleset.creator.DefaultItemCreator;
 import games.stendhal.server.core.rule.defaultruleset.creator.FullItemCreator;

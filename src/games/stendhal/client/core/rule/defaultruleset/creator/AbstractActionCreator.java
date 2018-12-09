@@ -10,30 +10,21 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-package games.stendhal.server.core.rule.defaultruleset.creator;
+package games.stendhal.client.core.rule.defaultruleset.creator;
 
 import java.lang.reflect.Constructor;
 
-import org.apache.log4j.Logger;
-
+import games.stendhal.client.actions.SlashAction;
 import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
-import games.stendhal.server.core.rule.defaultruleset.DefaultItem;
-import games.stendhal.server.entity.item.Item;
+import games.stendhal.client.core.rule.defaultruleset.DefaultAction;
 
-/**
- * Base item creator (using a constructor).
- */
-abstract class AbstractItemCreator extends AbstractCreator<Item>{
+abstract class AbstractActionCreator extends AbstractCreator<SlashAction> {
 
-	static final Logger logger = Logger.getLogger(AbstractItemCreator.class);
+	protected final DefaultAction defaultAction;
 
-	/**
-	 *
-	 */
-	final DefaultItem defaultItem;
-
-	public AbstractItemCreator(DefaultItem defaultItem, final Constructor< ? > construct) {
-		super(construct, "Item");
-		this.defaultItem = defaultItem;
+	public AbstractActionCreator(DefaultAction defaultAction, Constructor<?> construct) {
+		super(construct, "SlashAction");
+		this.defaultAction = defaultAction;
 	}
+
 }
