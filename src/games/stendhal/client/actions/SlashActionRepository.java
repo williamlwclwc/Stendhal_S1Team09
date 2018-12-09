@@ -50,8 +50,8 @@ public class SlashActionRepository {
       // If the xml contained any errors, we don't want everything to crash.    
       try
       {
-        List<DefaultAction> ListOfXMLActions = actionsLoader.load();
-        for (DefaultAction eachAction : ListOfXMLActions)
+        List<DefaultAction> listOfXMLActions = actionsLoader.load();
+        for (DefaultAction eachAction : listOfXMLActions)
         {
           actions.put(eachAction.getName(), eachAction.getAction());
         }
@@ -109,7 +109,6 @@ public class SlashActionRepository {
     actions.put("supporta", supporta);
 
     actions.put("takescreenshot", new ScreenshotAction());
-    actions.put("tell", msg);
 
     actions.putAll(BareBonesBrowserLaunchCommandsFactory.createBrowserCommands());
 
