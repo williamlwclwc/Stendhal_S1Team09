@@ -190,4 +190,193 @@
       <!-- Not sure about this but I think this has not yet been implemented -->
       <!-- <remainder name="action" index="open"/>  -->
     </action>   
+
+
+
+
+<!-- EmoteAction.java -->
+<action name= "emoteAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+ <remainder name="text" />
+</action>
+
+<!-- GagAction.java -->
+<action name= "gagAction" minimumParameters="2" maximumParameters="2">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="minutes" index="1" />
+
+  </parameters>
+  
+  <remainder name="reason" />
+ 
+</action>
+
+
+
+<!-- GroupMessageAction.java -->
+<action name= "groupMessageAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+ 
+ <remainder name="text" />
+</action>
+
+
+<!-- GrumpyAction.java -->
+<action name= "grumpyAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+ <remainder name="reason" />
+ 
+</action>
+
+
+
+<!-- InspectAction.java -->
+<action name= "inspectAction" minimumParameters="1" maximumParameters="1">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        
+   </parameters>
+ 
+</action>
+
+<!-- InvisibleAction.java -->
+<action name= "invisibleAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+ 
+</action>
+
+<!-- JailAction.java -->
+<action name= "jailAction" minimumParameters="2" maximumParameters="2">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="minutes" index="1" />
+   </parameters>
+   
+   <remainder name="reason" />
+ 
+</action>
+
+ 	
+<!-- ListProducersAction.java -->
+	
+<action name= "listProducersAction" minimumParameters="0" maximumParameters="0">
+	 <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+	
+</action>
+
+
+<!-- MessageAction.java -->
+	<action name= "messageAction" minimumParameters="1" maximumParameters="1">
+	   <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+	  
+	   <remainder name="reason" />
+
+	</action>
+	
+	
+
+<!-- RemoveBuddyAction.java -->
+<action name= "removeBuddyAction" minimumParameters="1" maximumParameters="1">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+   </parameters>
+ 
+</action>
+
+
+<!-- SentenceAction.java -->
+<action name= "sentenceAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+ 
+ <remainder name="value" />
+</action>
+
+
+<!-- StoreMessageAction.java -->
+<action name= "storeMessageAction" minimumParameters="1" maximumParameters="1">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+    
+   </parameters>
+  <remainder name="text" />
+</action>
+
+
+<!-- SupportAction.java -->
+<action name= "supportAction" minimumParameters="0" maximumParameters="2">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+ <remainder name="text" />
+</action>
+
+<!-- SupportAnswerAction.java -->
+<action name= "supportAnswerAction" minimumParameters="1" maximumParameters="1">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+   </parameters>
+ 
+</action>
+
+<!-- TeleportAction.java -->
+<action name= "teleportAction" minimumParameters="4" maximumParameters="4">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+  <parameters>
+        <parameter name="target" index="0" />
+        <parameter name="zone" index="1" />
+        <parameter name = "x" index = "2"/>
+        <parameter name = "y" index = "3"/>
+   </parameters>
+ 
+   <remainder name="text" />
+</action>
+
+<!-- TeleportToAction.java -->
+<action name= "teleportToAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+ 
+ 
+</action>
+
+<!-- TellAllAction.java -->
+<action name= "tellAllAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+ 
+ <remainder name="text" />
+</action>
+
+<!-- TravelLogAction.java -->
+<action name= "travelLogAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+ 
+</action>
+
+
+<!-- WhereAction.java -->
+<action name= "whereAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+</action>
+
+<!-- WhoAction.java -->
+<action name= "whoAction" minimumParameters="0" maximumParameters="0">
+ <implementation class-name = "games.stendhal.client.actions.SimpleAction" />
+
+</action>
+
+
+
 </actions>
+
+
+
