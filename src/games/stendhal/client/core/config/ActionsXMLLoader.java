@@ -134,6 +134,7 @@ public class ActionsXMLLoader extends DefaultHandler {
 			}
 			if(parameterValues != null && !parameterValues.isEmpty()) {
 				action.setParameters(parameterValues);
+				parameterValues = null;
 			}
 			if(minimumParameters != 0) {
 				action.setMinimumParameters(minimumParameters);
