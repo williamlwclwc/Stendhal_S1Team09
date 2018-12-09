@@ -106,7 +106,6 @@ public class SlashActionRepository {
 
     actions.put("summonat", new SummonAtAction());
     actions.put("summon", new SummonAction());
-    actions.put("supporta", supporta);
 
     actions.put("takescreenshot", new ScreenshotAction());
 
