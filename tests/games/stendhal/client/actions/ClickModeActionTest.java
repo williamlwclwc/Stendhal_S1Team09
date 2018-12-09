@@ -7,12 +7,6 @@ import org.junit.Test;
 
 public class ClickModeActionTest {
 	
-	// Test for execution
-//	@Test
-//	public void testExecute() {
-//		ClickModeAction click = new ClickModeAction();
-//		assertTrue(click.execute(null, null));
-//	}
 	// Test for getting maximum parameters number
 	@Test
 	public void testGetMaximumParameters() {

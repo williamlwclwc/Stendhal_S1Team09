@@ -10,19 +10,6 @@ import org.junit.Test;
 
 public class ClientInfoActionTest {
 	
-//	// Test for execution
-//	@Test
-//	public void testExecute() {
-//		new MockStendhalClient() {
-//			@Override
-//			public void send(final RPAction action) {
-//				assertEquals("support", action.get("type"));
-//			}
-//		};
-//		final ClientInfoAction action = new ClientInfoAction();
-//		assertTrue(action.execute(null, null));
-//	}
-	
 	// Test for getting maximum parameters number
 	@Test
 	public void testGetMaximumParameters() {
