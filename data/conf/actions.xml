@@ -2,11 +2,11 @@
 <actions xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="stendhal actions.xsd ">
 	
-	<action name="who">
+	<action name="who" minimumParameters="0" maximumParameters="0">
 		<implementation class-name="games.stendhal.client.actions.SimpleAction" />
 	</action>
 
-	<action name="where">
+	<action name="where" minimumParameters="0" maximumParameters="0">
 		<implementation class-name="games.stendhal.client.actions.SimpleAction" />
 		<remainder name="target" />
 	</action>
