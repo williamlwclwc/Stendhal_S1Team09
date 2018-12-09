@@ -157,7 +157,7 @@ public class SlashActionRepository {
     actions.put("movecont", new MoveContinuousAction());
 
     // PvP challenge actions
-//    actions.put("challenge", new CreateChallengeAction());
+    actions.put("challenge", new CreateChallengeAction());
     actions.put("accept", new AcceptChallengeAction());
   }
 
