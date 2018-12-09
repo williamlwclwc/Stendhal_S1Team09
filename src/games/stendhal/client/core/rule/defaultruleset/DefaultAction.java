@@ -22,7 +22,7 @@ import games.stendhal.client.actions.SlashAction;
 import games.stendhal.client.core.rule.defaultruleset.creator.FullActionCreator;
 import games.stendhal.common.core.rule.defaultruleset.creator.AbstractCreator;
 
-public class DefaultAction {
+public class DefaultAction implements SlashAction {
 	
 	// The logger instance.
 	private static final Logger logger = Logger.getLogger(DefaultAction.class);
@@ -124,6 +124,7 @@ public class DefaultAction {
 	}
 
 	// Method to access minimum parameters.
+	@Override
 	public int getMinimumParameters()
 	{
 		return minimumParameters;
@@ -135,9 +136,16 @@ public class DefaultAction {
 	}
 	
 	// Method to access maximum parameters.
+	@Override
 	public int getMaximumParameters()
 	{
 		return maximumParameters;
+	}
+
+	@Override
+	public boolean execute(String[] params, String remainder) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 
