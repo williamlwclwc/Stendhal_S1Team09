@@ -34,11 +34,11 @@ public class SimpleAction implements SlashAction {
 		}
 		action.put("type", name);
 		// if the action has remainder
-		if(remainderName != null) {
+		if(remainderName != null || remainderName.isEmpty()) {
 			action.put(remainderName, StringHelper.unquote(remainder));
 		}
 		// if the action has parameters
-		if(params != null){
+		if (params != null) {
 			for(Map.Entry<String, Integer> entry : parameters.entrySet()) {
 				action.put(entry.getKey(), params[entry.getValue()]);
 			}
