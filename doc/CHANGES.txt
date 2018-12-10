@@ -1,5 +1,8 @@
 Changelog
 ---------
+1.30uom
+*code*
+- many client slash actions are now loaded from an xml configuration file instead of having classes for every action 
 
 1.29uom
 *world*

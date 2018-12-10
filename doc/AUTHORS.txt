@@ -168,24 +168,24 @@ Authors of Stendhal are:
   - Diligent Dodo (aka Soniccuz)
   · Artist (mimic, dodo, suba diving concepts)
 - Chionia Kotsalidou
-  · Coder (Lon Jatham)
+  · Coder (Lon Jatham, slash actions xml migration)
   · Bugs fixer
 - Inthu Sarachchandran
-  · Coder (Invisibility Ring)
+  · Coder (Invisibility Ring, slash actions xml migration)
   · Bugs fixer
 - Javier Pacheco Rodriguez
-  · Coder (Lon Jatham)
+  · Coder (Lon Jatham, slash actions xml migration)
   · Artist (Lon Jatham)
   · Bugs fixer
 - Jonathan Haylett
-  · Coder (Wofol Scroll)
+  · Coder (Wofol Scroll, slash actions xml migration)
   · Artist (wofol scroll icon)
   · Bugs fixer
 - Wenchang Liu
-  · Coder (Wofol Scroll, Wheelbarrows)
+  · Coder (Wofol Scroll, Wheelbarrows, slash actions xml migration)
   · Bugs fixer
 - Yi Yu Lin (Yvetta)
-  · Coder (Invisibility Ring, Wheelbarrows)
+  · Coder (Invisibility Ring, Wheelbarrows, slash actions xml migration)
   · Bugs fixer
 
 We also thank many who have contributed to Stendhal by providing patches,
