@@ -66,7 +66,7 @@ public class GroupMessageActionTest {
 	 */
 	@Test
 	public void testGetMinimumParameters() {
-		final AwayAction action = new AwayAction();
+		final GroupMessageAction action = new GroupMessageAction();
 		assertThat(action.getMinimumParameters(), is(0));
 	}
 }

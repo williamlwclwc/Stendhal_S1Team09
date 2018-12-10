@@ -37,10 +37,9 @@ public class SlashActionRepository {
    */
   public static void register() {
     URI uri;
-    final SlashAction msg = new MessageAction();
-    final SlashAction supporta = new SupportAnswerAction();
     final SlashAction who = new WhoAction();
     final SlashAction help = new HelpAction();
+    final SlashAction msg = new MessageAction();
     final GroupMessageAction groupMessage = new GroupMessageAction();
 	try
 	{
@@ -87,6 +86,7 @@ public class SlashActionRepository {
     actions.put("ignore", new IgnoreAction());
 
     actions.put("mute", new MuteAction());
+    actions.put("msg", msg);
 
     actions.put("names", who);
 
@@ -106,8 +106,11 @@ public class SlashActionRepository {
 
     actions.put("summonat", new SummonAtAction());
     actions.put("summon", new SummonAction());
+    
+    actions.put("support",  new SupportAction());
 
     actions.put("takescreenshot", new ScreenshotAction());
+    actions.put("tell", msg);
 
     actions.putAll(BareBonesBrowserLaunchCommandsFactory.createBrowserCommands());
 
