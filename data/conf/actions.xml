@@ -82,8 +82,8 @@
 	  <implementation class-name="games.stendhal.client.actions.SimpleAction" />
     </action> -->
 
-    <!-- AutoWalkStopAction -->
-    <action name="walk">
+    <!-- AutoWalkAction -->
+    <action name="walk" minimumParameters="0" maximumParameters="0">
 		<implementation class-name="games.stendhal.client.actions.SimpleAction" />
       	<!-- Not sure about this -->
       	<remainder name="target" />

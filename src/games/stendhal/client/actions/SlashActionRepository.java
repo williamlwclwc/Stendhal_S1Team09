@@ -37,8 +37,6 @@ public class SlashActionRepository {
    */
   public static void register() {
     URI uri;
-    final SlashAction msg = new MessageAction();
-    final SlashAction supporta = new SupportAnswerAction();
     final SlashAction who = new WhoAction();
     final SlashAction help = new HelpAction();
     final GroupMessageAction groupMessage = new GroupMessageAction();

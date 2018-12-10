@@ -34,7 +34,7 @@ public class SimpleAction implements SlashAction {
 		}
 		action.put("type", name);
 		// if the action has remainder
-		if(remainderName != null || remainderName.isEmpty()) {
+		if(remainderName != null || !remainderName.isEmpty()) {
 			action.put(remainderName, StringHelper.unquote(remainder));
 		}
 		// if the action has parameters
